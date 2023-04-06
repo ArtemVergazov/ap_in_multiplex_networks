@@ -1,3 +1,9 @@
 *.ipynb_checkpoints/*
 .vscode/*
 *.npy
+__pycache__/
+.vs/
+Debug/
+Release/
+*.filters
+*.user
