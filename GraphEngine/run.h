@@ -1,3 +1,10 @@
 #pragma once
 
-void runSF(int N, double cMin, double cMax, int cNum, double gamma, int nRuns);
+void runSF(
+    const int N,
+    const double cMin,
+    const double cMax,
+    const int cNum,
+    const double gamma,
+    const int nRuns
+);

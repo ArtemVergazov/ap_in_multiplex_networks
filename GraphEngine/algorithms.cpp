@@ -2,7 +2,6 @@
 #include <algorithm> // std::min
 #include <stdexcept> // std::runtime_error
 #include <string>
-#include <utility> // std::pair
 #include <cstddef> // std::size_t
 
 // A fast BFS node generator
@@ -41,50 +40,80 @@ std::vector<std::set<int>> connectedComponents(const Graph &G) {
     return res;
 }
 
-// ap = AP = articulation points
-// p = parent
-// disc[u] = discovery time of u
-// low[u] = 'low' node of u
-int dfsAP(
-    const Graph &G, int u, int p,
-    std::vector<int> &low, std::vector<int> &disc, std::vector<int> &ap,
-    int &time
+#pragma comment(linker, "/STACK:100000000000000")
+void findArticulationPointsRecursively(
+    const Graph &network, int node, int &time, std::vector<int> &parent,
+    std::vector<int> &lowValue, std::vector <int> &discoveryTime,
+    std::vector<bool> &visited, std::vector <bool> &articulationPoints
 ) {
+
     int children = 0;
-    low[u] = disc[u] = ++time;
-    for (const int &v : G[u].neighbors_) {
-        // We don't want to go back through the same path.
-        // If we go back is because we found another way back
-        if (v == p || !G[v].present_) continue;
-        if (!disc[v]) { // if V has not been discovered before
-            ++children;
-            dfsAP(G, v, u, low, disc, ap, time); // recursive DFS call
-            if (disc[u] <= low[v])
-                ap[u] = 1;
-            low[u] = std::min(low[u], low[v]); // low[v] might be an ancestor of u
+    visited[node] = true;
+    discoveryTime[node] = lowValue[node] = ++time;
+
+    for (int i = 0; i < network[node].degree(); ++i) {
+
+        int neighbor = network[node][i];
+
+        if (network[neighbor].present_) {
+
+            if (false == visited[neighbor]) {
+
+                ++children;
+                parent[neighbor] = node;
+
+                findArticulationPointsRecursively(
+                    network, neighbor, time, parent,
+                    lowValue, discoveryTime,
+                    visited, articulationPoints
+                );
+
+                lowValue[node] = std::min(lowValue[node], lowValue[neighbor]);
+
+
+                if (-1 == parent[node] && children > 1)
+                    articulationPoints[node] = true;
+
+                if (-1 != parent[node] && lowValue[neighbor] >= discoveryTime[node])
+                    articulationPoints[node] = true;
+
+            }
+            else if (neighbor != parent[node]) {
+                lowValue[node] = std::min(lowValue[node], discoveryTime[neighbor]);
+            }
         }
-        else // if v was already discovered means that we found an ancestor
-            low[u] = std::min(low[u], disc[v]); // finds the ancestor with the least discovery time
     }
-    return children;
 }
 
 std::vector<int> articulationPoints(const Graph &G) {
-    std::vector<int> ap(G.size());
-    std::vector<int> low(G.size());
-    std::vector<int> disc(G.size());
-    int time = 0;
-    for (int u = 0; u < G.size(); ++u) {
-        if (!disc[u] && G[u].present_) {
-            ap[u] = dfsAP(G, u, u, low, disc, ap, time) > 1;
+    
+    int time;
+
+    std::vector<bool> visited(G.size(), false);
+    std::vector<bool> artPoints(G.size(), false);
+    std::vector<int> parent(G.size(), -1);
+    std::vector<int> lowValue(G.size());
+    std::vector<int> discoveryTime(G.size());
+
+    for (int i = 0; i < G.size(); ++i) {
+        if (false == visited[i] && G[i].present_) {
+
+            time = 0;
+            findArticulationPointsRecursively(
+                G, i, time, parent,
+                lowValue, discoveryTime,
+                visited, artPoints
+            );
         }
     }
+
     std::vector<int> res;
-    for (std::size_t i = 0; i < ap.size(); ++i) {
-        if (ap[i]) {
+    for (int i = 0; i < G.size(); ++i) {
+        if (artPoints[i]) {
             res.push_back(i);
         }
     }
+
     return res;
 }
 
@@ -154,7 +183,7 @@ int maxComponentSize(const Graph &G) {
 
 std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
     
-    cascadeRemoveLinks(G1, G2);
+    //cascadeRemoveLinks(G1, G2);
 
     auto artPoints = articulationPointsMultiplex(G1, G2);
     int gccSize = maxComponentSize(G1);

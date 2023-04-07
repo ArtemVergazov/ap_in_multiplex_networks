@@ -10,11 +10,21 @@
 
 using json = nlohmann::json;
 
-void runSF(int N, double cMin, double cMax, int cNum, double gamma, int nRuns) {
+#define OUTPUTS
+
+void runSF(
+    const int N,
+    const double cMin,
+    const double cMax,
+    const int cNum,
+    const double gamma,
+    const int nRuns
+) {
 
     json results;
     double dc = (cMax - cMin) / (cNum - 1);
-    unsigned long seed = static_cast<unsigned long>(time(NULL));
+    //unsigned long seed = static_cast<unsigned long>(time(NULL));
+    unsigned long seed = 1;
 
     for (int i = 0; i < cNum; ++i) {
 
@@ -22,7 +32,9 @@ void runSF(int N, double cMin, double cMax, int cNum, double gamma, int nRuns) {
         results[i]["c"] = c;
         results[i]["runs"] = {};
 
+#ifdef OUTPUTS
         std::cout << "\n\nc = " << c << std::endl;
+#endif // OUTPUTS
         
         for (int runID = 0; runID < nRuns; ++runID) {
 
@@ -37,7 +49,7 @@ void runSF(int N, double cMin, double cMax, int cNum, double gamma, int nRuns) {
             createScaleFreeNetwork(G2, N, gamma, c, seed + seed);
             ++seed;
 
-            /*std::cout << "\tNetwork created\n";*/
+            //std::cout << "\tNetwork created\n";
 
             while (true) {
 
