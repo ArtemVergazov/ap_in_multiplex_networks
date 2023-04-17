@@ -11,6 +11,7 @@ public:
     void removeNode(int id);
     const Node &operator[](int i) const { return m_nodes[i]; }
     Node &operator[](int i) { return m_nodes[i]; }
+    bool operator==(const Graph &other) const;
     
     //void buildDegreeVector();
     //int degree(int i) const { return m_degree[i]; }

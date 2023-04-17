@@ -14,14 +14,15 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 100000;
-    constexpr double cMin = 2.78;
+    constexpr int N = 1000000;
+    constexpr double cMin = 0;
     constexpr double cMax = 12;
-    constexpr int cNum = 2;
-    constexpr double gamma = 3;
+    constexpr int cNum = 100;
+    constexpr double gamma = 4;
     constexpr int nRuns = 50;
 
-    runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    //runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    runER(N, cMin, cMax, cNum, nRuns);
     //test();
 
     auto end = std::chrono::high_resolution_clock::now();

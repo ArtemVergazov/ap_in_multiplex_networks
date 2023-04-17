@@ -12,4 +12,7 @@ struct Node {
     bool has(int id) const;
     int degree() const { return neighbors_.size(); }
     void remove(int id);
+
+    bool operator==(const Node &other) const;
+    bool operator!=(const Node &other) const { return !(*this == other); }
 };

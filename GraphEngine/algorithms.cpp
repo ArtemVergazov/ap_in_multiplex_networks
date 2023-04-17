@@ -171,6 +171,7 @@ void cascadeRemoveLinks(Graph &Ga, Graph &Gb) {
 
 int maxComponentSize(const Graph &G) {
     auto comps = connectedComponents(G);
+    if (comps.empty()) return 0;
     int max = comps[0].size();
     for (std::size_t i = 1; i < comps.size(); ++i) {
         int size = comps[i].size();

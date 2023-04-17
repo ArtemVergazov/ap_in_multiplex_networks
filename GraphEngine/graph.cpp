@@ -42,3 +42,15 @@ void Graph::removeNode(int id) {
 //    }
 //
 //}
+
+bool Graph::operator==(const Graph &other) const {
+    
+    if (size() != other.size()) return false;
+
+    for (int i = 0; i < size(); ++i) {
+        if (m_nodes[i] != other[i]) {
+            return false;
+        }
+    }
+    return true;
+}
