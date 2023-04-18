@@ -10,6 +10,11 @@
 
 void createScaleFreeNetwork(
     Graph &network,
-    int N, double gamma, double c,
-    unsigned long seed = static_cast<unsigned long>(time(NULL))
+    const int N, const double gamma, const double c,
+    const unsigned long seed = static_cast<unsigned long>(time(NULL))
+);
+
+void createErdosRenyiNetwork(
+    Graph &network, const int N, const double c,
+    const unsigned long seed = static_cast<unsigned long>(time(NULL))
 );

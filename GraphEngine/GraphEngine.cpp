@@ -21,7 +21,8 @@ int main(int argc, char **argv) {
     constexpr double gamma = 2.5;
     constexpr int nRuns = 50;
 
-    runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    //runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    runER(N, cMin, cMax, cNum, nRuns);
     //test();
 
     auto end = std::chrono::high_resolution_clock::now();

@@ -4,7 +4,9 @@
 #include <algorithm> // std::lower_bound
 #include "RNG_MT.h"
 
-void createScaleFreeNetwork(Graph &network, int N, double gamma, double c, unsigned long seed) {
+void createScaleFreeNetwork(
+    Graph &network, const int N, const double gamma, 
+    const double c, const unsigned long seed) {
 
     class MTRand *randNumb = new MTRand((unsigned long)seed);
     network = Graph(N);
@@ -55,5 +57,27 @@ void createScaleFreeNetwork(Graph &network, int N, double gamma, double c, unsig
     }
 
     //network.buildDegreeVector();
+    delete randNumb;
+}
+
+void createErdosRenyiNetwork(
+    Graph &network, const int N, const double c,
+    const unsigned long seed
+) {
+
+    class MTRand *randNumb = new MTRand(seed);
+    network = Graph(N);
+
+    double p = c / (N-1.);
+
+    for (int source = 0; source < N - 1; ++source) {
+        for (int target = source + 1; target < N; ++target) {
+
+            if (randNumb->randExc() < p) {
+                network.addEdge(source, target);
+            }
+        }
+    }
+
     delete randNumb;
 }
