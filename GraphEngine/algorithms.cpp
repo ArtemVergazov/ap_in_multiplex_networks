@@ -184,7 +184,7 @@ int maxComponentSize(const Graph &G) {
 
 std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
     
-    //cascadeRemoveLinks(G1, G2);
+    cascadeRemoveLinks(G1, G2);
 
     auto artPoints = articulationPointsMultiplex(G1, G2);
     int gccSize = maxComponentSize(G1);
