@@ -21,15 +21,16 @@ int main(int argc, char **argv) {
     //constexpr double gamma = 2.5;
     //constexpr int nRuns = 50;
 
-    constexpr int N = 1000000;
+    constexpr int N = 100000;
     constexpr double cMin = 0;
     constexpr double cMax = 12;
-    constexpr int cNum = 100;
-    constexpr int nRuns = 50;
-    constexpr int gamma = 3;
+    constexpr int cNum = 50;
+    constexpr int nRuns = 10;
+    constexpr int gamma = 6;
 
-    runSF(N, cMin, cMax, cNum, gamma, nRuns);
-    //runER(N, cMin, cMax, cNum, nRuns);
+    //runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    runER(N, cMin, cMax, cNum, nRuns);
+    //runSFNoCascade(N, cMin, cMax, cNum, gamma, nRuns);
     //test();
 
     auto end = std::chrono::high_resolution_clock::now();
