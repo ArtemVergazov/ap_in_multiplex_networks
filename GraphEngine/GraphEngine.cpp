@@ -29,8 +29,9 @@ int main(int argc, char **argv) {
     constexpr int gamma = 6;
 
     //runSF(N, cMin, cMax, cNum, gamma, nRuns);
-    runER(N, cMin, cMax, cNum, nRuns);
+    //runER(N, cMin, cMax, cNum, nRuns);
     //runSFNoCascade(N, cMin, cMax, cNum, gamma, nRuns);
+    runERMonoplex(N, cMin, cMax, cNum, nRuns);
     //test();
 
     auto end = std::chrono::high_resolution_clock::now();

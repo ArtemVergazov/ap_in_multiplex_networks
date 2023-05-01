@@ -200,3 +200,18 @@ std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
 
     return std::make_pair(artPoints, gccSize);
 }
+
+std::pair<std::set<int>, int> removeArticulationPointsMonoplex(Graph &G) {
+
+    auto artPointsVec = articulationPoints(G);
+    int gccSize = maxComponentSize(G);
+
+    for (int i : artPointsVec) {
+        if (G[i].present_) {
+            G.removeNode(i);
+        }
+    }
+
+    std::set<int> artPoints(artPointsVec.begin(), artPointsVec.end());
+    return std::make_pair(artPoints, gccSize);
+}
