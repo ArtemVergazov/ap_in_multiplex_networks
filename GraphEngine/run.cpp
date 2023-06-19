@@ -93,7 +93,7 @@ void runSF(
     output["results"] = results;
 
     // Write prettified JSON to another file
-    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results.json");
+    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_3.json");
     o << std::setw(4) << output << std::endl;
 
 }
@@ -261,7 +261,7 @@ void runSFNoCascade(
     output["results"] = results;
 
     // Write prettified JSON to another file
-    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_6_no_cascade.json");
+    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_4_no_cascade.json");
     o << std::setw(4) << output << std::endl;
 
 }
