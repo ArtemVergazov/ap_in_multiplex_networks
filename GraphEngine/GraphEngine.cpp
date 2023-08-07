@@ -14,23 +14,16 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    //constexpr int N = 1000000;
-    //constexpr double cMin = 12.1212121212;
-    //constexpr double cMax = 20;
-    //constexpr int cNum = 66;
-    //constexpr double gamma = 2.5;
-    //constexpr int nRuns = 50;
-
     constexpr int N = 100000;
     constexpr double cMin = 0;
-    constexpr double cMax = 8;
+    constexpr double cMax = 12;
     constexpr int cNum = 200;
     constexpr int nRuns = 10;
     constexpr int gamma = 4;
 
-    //runSF(N, cMin, cMax, cNum, gamma, nRuns);
+    runSF(N, cMin, cMax, cNum, gamma, nRuns);
     //runER(N, cMin, cMax, cNum, nRuns);
-    runSFNoCascade(N, cMin, cMax, cNum, gamma, nRuns);
+    //runSFNoCascade(N, cMin, cMax, cNum, gamma, nRuns);
     //runERMonoplex(N, cMin, cMax, cNum, nRuns);
     //test();
 
