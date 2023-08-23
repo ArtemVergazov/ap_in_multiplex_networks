@@ -169,31 +169,44 @@ void cascadeRemoveLinks(Graph &Ga, Graph &Gb) {
     }
 }
 
-int maxComponentSize(const Graph &G) {
+std::pair<int, std::set<int>> maxComponentSize(const Graph &G) {
     auto comps = connectedComponents(G);
-    if (comps.empty()) return 0;
-    int max = comps[0].size();
+    if (comps.empty()) return std::make_pair(0, std::set<int>());
+
+    int imax = 0;
+    int max = comps[imax].size();
     for (std::size_t i = 1; i < comps.size(); ++i) {
         int size = comps[i].size();
         if (size > max) {
             max = size;
+            imax = i;
         }
     }
-    return max;
+    return std::make_pair(max, comps[imax]);
 }
 
 std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
     
     cascadeRemoveLinks(G1, G2);
 
-    auto artPoints = articulationPointsMultiplex(G1, G2);
-    int gccSize = maxComponentSize(G1);
+    const auto &artPoints = articulationPointsMultiplex(G1, G2);
+    const auto &gccSizeAndComp = maxComponentSize(G1);
+    int gccSize = gccSizeAndComp.first;
+    const auto &gcc = gccSizeAndComp.second;
 
     for (int i : artPoints) {
         if (G1[i].present_) {
             G1.removeNode(i);
         }
         if (G2[i].present_) {
+            G2.removeNode(i);
+        }
+    }
+    for (int i = 0; i < G1.size(); ++i) {
+        if (G1[i].present_ && gcc.find(i) == gcc.end()) {
+            G1.removeNode(i);
+        }
+        if (G2[i].present_ && gcc.find(i) == gcc.end()) {
             G2.removeNode(i);
         }
     }
@@ -204,10 +217,17 @@ std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
 std::pair<std::set<int>, int> removeArticulationPointsMonoplex(Graph &G) {
 
     auto artPointsVec = articulationPoints(G);
-    int gccSize = maxComponentSize(G);
+    const auto &gccSizeAndComp = maxComponentSize(G);
+    int gccSize = gccSizeAndComp.first;
+    const auto &gcc = gccSizeAndComp.second;
 
     for (int i : artPointsVec) {
         if (G[i].present_) {
+            G.removeNode(i);
+        }
+    }
+    for (int i = 0; i < G.size(); ++i) {
+        if (G[i].present_ && gcc.find(i) == gcc.end()) {
             G.removeNode(i);
         }
     }

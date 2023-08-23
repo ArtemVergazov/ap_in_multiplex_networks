@@ -33,3 +33,5 @@ void runERMonoplex(
     const int cNum,
     const int nRuns
 );
+
+void runJsonTest();

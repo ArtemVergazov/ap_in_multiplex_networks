@@ -17,6 +17,7 @@ def scale_free_network(parameters):
         i0 = 1.
     else:
         i0 = (10 * 2**.5 * (1 - alpha))**(1/alpha) * parameters['num_nodes']**(1 - .5/alpha)
+    # i0 = 1.
 
     weights = (i0 + np.arange(parameters['num_nodes']))**-alpha
     sum_ = weights.cumsum()
@@ -34,11 +35,11 @@ def scale_free_network(parameters):
             source = bisect_left(cdf, np.random.uniform(0, 1))
             target = bisect_left(cdf, np.random.uniform(0, 1))
 
-            if source == target:
+            if source == target or target in G.neighbors(source):
                 condition = True
 
-            if target in G.neighbors(source):
-                break
+            # if target in G.neighbors(source):
+            #     break
         
         G.add_edge(source, target)
 

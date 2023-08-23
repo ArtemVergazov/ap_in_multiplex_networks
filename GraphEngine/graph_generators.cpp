@@ -24,7 +24,7 @@ void createScaleFreeNetwork(
     int numEdges = static_cast<int>(c * N / 2);
     for (int i = 0; i < N; ++i) {
         //sum += std::pow(i + i0, -alpha);
-        sum += std::pow(i + 1, -alpha);
+        sum += std::pow(i + 1., -alpha);
         cdf.push_back(sum);
     }
 
@@ -49,9 +49,10 @@ void createScaleFreeNetwork(
             condition = !network.addEdge(source, target);
 
             if (condition) {
-                if (network[source].has(target)) {
-                    break;
-                }
+                continue;
+                //if (network[source].has(target)) {
+                //    break;
+                //}
             }
         }
     }

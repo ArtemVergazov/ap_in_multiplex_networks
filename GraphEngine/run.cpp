@@ -93,7 +93,7 @@ void runSF(
     output["results"] = results;
 
     // Write prettified JSON to another file
-    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_3.json");
+    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_2.5.json");
     o << std::setw(4) << output << std::endl;
 
 }
@@ -350,5 +350,19 @@ void runERMonoplex(
     // Write prettified JSON to another file
     std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_monoplex\\results_ER.json");
     o << std::setw(4) << output << std::endl;
+
+}
+
+void runJsonTest() {
+
+    Graph G1;
+    createScaleFreeNetwork(G1, 100000, 3, 5, 1);
+    Graph G2;
+    createScaleFreeNetwork(G2, 100000, 3.5, 5, 1);
+    Graph G3;
+    createScaleFreeNetwork(G3, 100000, 2.5, 5, 1);
+    G1.toJson("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\network_models\\graph_3.json");
+    G2.toJson("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\network_models\\graph_3.5.json");
+    G3.toJson("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\network_models\\graph_2.5.json");
 
 }

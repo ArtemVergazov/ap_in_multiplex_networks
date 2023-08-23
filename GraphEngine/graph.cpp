@@ -1,5 +1,7 @@
 #include "graph.h"
+#include "json.hpp"
 #include <algorithm> // std::find_if
+#include <fstream> // std::ofstream
 
 Graph::Graph(int numNodes) :
     //m_degree(numNodes), m_componentID(numNodes, -1), m_queue(numNodes),
@@ -53,4 +55,20 @@ bool Graph::operator==(const Graph &other) const {
         }
     }
     return true;
+}
+
+void Graph::toJson(std::string fileName) {
+
+    using json = nlohmann::json;
+    json output;
+    
+    for (int i = 0; i < size(); ++i) {
+        if (m_nodes[i].present_) {
+            output[std::to_string(i)] = m_nodes[i].neighbors_;
+        }
+    }
+
+    std::ofstream o(fileName);
+    o << std::setw(4) << output << std::endl;
+
 }
