@@ -353,6 +353,12 @@ void runERMonoplex(
 
 }
 
+void runFromFile(std::string pathToLayerData) {
+
+
+
+}
+
 void runJsonTest() {
 
     Graph G1;

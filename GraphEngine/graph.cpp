@@ -2,6 +2,7 @@
 #include "json.hpp"
 #include <algorithm> // std::find_if
 #include <fstream> // std::ofstream
+#include <sstream> // std::istringstream
 
 Graph::Graph(int numNodes) :
     //m_degree(numNodes), m_componentID(numNodes, -1), m_queue(numNodes),
@@ -13,9 +14,33 @@ Graph::Graph(int numNodes) :
 
 }
 
-// Degree vector is in inconsistent state after this.
-// It is the user's responsibility to rebuild the degree vector afterwards.
+Graph::Graph(std::string pathToEdgeData) {
+
+    std::ifstream file(pathToEdgeData);
+    std::string line;
+
+    while (std::getline(file, line)) {
+        int a, b;
+        std::istringstream(line) >> a >> b;
+        
+    }
+
+}
+
+bool Graph::hasNode(int id) const {
+    for (auto node = m_nodes.begin(); node != m_nodes.end(); ++node) {
+        if (node->id_ == id && node->present_) {
+            return true;
+        }
+    }
+    return false;
+}
+
 bool Graph::addEdge(int i, int j) {
+
+    if (!hasNode(i)) {
+        
+    }
 
     if (!m_nodes[i].has(j) && i != j) {
         m_nodes[i].neighbors_.push_back(j);

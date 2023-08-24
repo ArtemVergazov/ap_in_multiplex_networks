@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 void runSF(
     const int N,
@@ -33,5 +34,7 @@ void runERMonoplex(
     const int cNum,
     const int nRuns
 );
+
+void runFromFile(std::string pathToLayerData);
 
 void runJsonTest();

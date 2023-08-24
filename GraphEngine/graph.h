@@ -1,12 +1,14 @@
 #pragma once
 #include "node.h"
-#include "string"
+#include <string>
 
 class Graph {
 public:
     Graph(int numNodes = 0);
+    Graph(std::string pathToEdgeData);
 
     int size() const { return m_size; }
+    bool hasNode(int id) const;
     bool addEdge(int i, int j);
     void removeEdge(int i, int j);
     void removeNode(int id);
