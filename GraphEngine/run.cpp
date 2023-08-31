@@ -17,7 +17,8 @@ void runSF(
     const double cMin,
     const double cMax,
     const int cNum,
-    const double gamma,
+    const double gamma1,
+    const double gamma2,
     const int nRuns
 ) {
 
@@ -45,8 +46,8 @@ void runSF(
             results[i]["runs"][runID]["cascade"] = {};
 
             Graph G1, G2;
-            createScaleFreeNetwork(G1, N, gamma, c, seed + seed - 1);
-            createScaleFreeNetwork(G2, N, gamma, c, seed + seed);
+            createScaleFreeNetwork(G1, N, gamma1, c, seed + seed - 1);
+            createScaleFreeNetwork(G2, N, gamma2, c, seed + seed);
             ++seed;
 
             //std::cout << "\tNetwork created\n";
@@ -90,10 +91,13 @@ void runSF(
     output["N"] = N;
     output["nruns"] = nRuns;
     output["crange"] = { cMin, cMax, cNum };
+    output["layer_degrees"] = { gamma1, gamma2 };
     output["results"] = results;
 
     // Write prettified JSON to another file
-    std::ofstream o("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_2.5.json");
+    std::string fileName = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\articulation_points_multiplex\\results_lambda_";
+    fileName += std::to_string(gamma1) + "_" + std::to_string(gamma2) + ".json";
+    std::ofstream o(fileName);
     o << std::setw(4) << output << std::endl;
 
 }

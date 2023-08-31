@@ -6,7 +6,8 @@ void runSF(
     const double cMin,
     const double cMax,
     const int cNum,
-    const double gamma,
+    const double gamma1,
+    const double gamma2,
     const int nRuns
 );
 
