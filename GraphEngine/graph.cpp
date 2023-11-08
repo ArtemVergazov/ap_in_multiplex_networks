@@ -3,6 +3,7 @@
 #include <algorithm> // std::find_if
 #include <fstream> // std::ofstream
 #include <sstream> // std::istringstream
+#include <iostream>
 
 Graph::Graph(int numNodes) :
     //m_degree(numNodes), m_componentID(numNodes, -1), m_queue(numNodes),
@@ -14,17 +15,15 @@ Graph::Graph(int numNodes) :
 
 }
 
-Graph::Graph(std::string pathToEdgeData) {
-
-    std::ifstream file(pathToEdgeData);
+void Graph::fromJson(std::string fileName) {
+    std::ifstream file(fileName);
     std::string line;
 
     while (std::getline(file, line)) {
-        int a, b;
-        std::istringstream(line) >> a >> b;
-        
+        int i, j;
+        std::istringstream(line) >> i >> j;
+        addEdge(i, j);
     }
-
 }
 
 bool Graph::hasNode(int id) const {
@@ -36,11 +35,19 @@ bool Graph::hasNode(int id) const {
     return false;
 }
 
+//bool Graph::addNode(int id) {
+//    if (hasNode(id)) {
+//        return false;
+//    }
+//    m_nodes.emplace_back(id);
+//    return true;
+//}
+
+// Assuming i and j exist
 bool Graph::addEdge(int i, int j) {
 
-    if (!hasNode(i)) {
-        
-    }
+    //addNode(i);
+    //addNode(j);
 
     if (!m_nodes[i].has(j) && i != j) {
         m_nodes[i].neighbors_.push_back(j);

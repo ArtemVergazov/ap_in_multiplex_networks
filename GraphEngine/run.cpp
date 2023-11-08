@@ -357,10 +357,30 @@ void runERMonoplex(
 
 }
 
-void runFromFile(std::string pathToLayerData) {
+void runFromFile(int nLayers, int nNodes) {
 
+    std::string pathToLayerData("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\real_data_experiments\\cpp_data");
+    std::vector<Graph> G;
+    for (int i = 0; i < nLayers; ++i) {
+        std::string pathToEdgeData(pathToLayerData + "\\l_" + std::to_string(i + 1) + ".txt");
+        std::cout << "Reading from " + pathToEdgeData << std::endl;
+        G.emplace_back(nNodes);
+        G[i].fromJson(pathToEdgeData);
+    }
 
+    while (true) {
 
+        auto artPointsGccSize = removeArticulationPoints(G);
+        const auto &artPoints = artPointsGccSize.first;
+        const auto &gccSize = artPointsGccSize.second;
+
+        std::cout << "\t\tNumber of articulation points: " << artPoints.size() << std::endl;
+        std::cout << "\t\tGCC size: " << gccSize << std::endl;
+        std::cout << std::endl;
+
+        if (!artPoints.size())
+            break;
+    }
 }
 
 void runJsonTest() {

@@ -5,10 +5,10 @@
 class Graph {
 public:
     Graph(int numNodes = 0);
-    Graph(std::string pathToEdgeData);
 
     int size() const { return m_size; }
     bool hasNode(int id) const;
+    bool addNode(int id);
     bool addEdge(int i, int j);
     void removeEdge(int i, int j);
     void removeNode(int id);
@@ -16,6 +16,7 @@ public:
     Node &operator[](int i) { return m_nodes[i]; }
     bool operator==(const Graph &other) const;
 
+    void fromJson(std::string fileName);
     void toJson(std::string fileName);
     
     //void buildDegreeVector();

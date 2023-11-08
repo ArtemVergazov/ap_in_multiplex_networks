@@ -10,4 +10,6 @@ std::vector<int> articulationPoints(const Graph &G);
 
 std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2);
 
+std::pair<std::set<int>, int> removeArticulationPoints(std::vector<Graph> &G);
+
 std::pair<std::set<int>, int> removeArticulationPointsMonoplex(Graph &G);

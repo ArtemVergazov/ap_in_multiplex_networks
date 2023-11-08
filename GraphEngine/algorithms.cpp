@@ -126,6 +126,17 @@ std::set<int> articulationPointsMultiplex(const Graph &G1, const Graph &G2) {
     return res;
 }
 
+std::set<int> articulationPointsMultiplex(const std::vector<Graph> &G) {
+    auto ap1 = articulationPoints(G[0]);
+    std::set<int> res(ap1.begin(), ap1.end());
+
+    for (int i = 1; i < G.size(); ++i) {
+        auto ap = articulationPoints(G[i]);
+        res.insert(ap.begin(), ap.end());
+    }
+    return res;
+}
+
 int findComponent(int node, const std::vector<std::set<int>> &connectedComponents) {
     for (std::size_t i = 0; i < connectedComponents.size(); ++i) {
         if (connectedComponents[i].find(node) != connectedComponents[i].end()) {
@@ -163,6 +174,42 @@ void cascadeRemoveLinks(Graph &Ga, Graph &Gb) {
                 if (findComponent(i, clustersB) != findComponent(j, clustersB)) {
                     keepGoing = true;
                     Ga.removeEdge(i, j);
+                }
+            }
+        }
+    }
+}
+
+void cascadeRemoveLinks(std::vector<Graph> &G) {
+
+    bool keepGoing = true;
+    while (keepGoing) {
+        keepGoing = false;
+
+        std::vector<std::vector<std::set<int>>> clustersInLayers;
+        for (const auto &g : G) {
+            clustersInLayers.push_back(connectedComponents(g));
+        }
+
+        for (int ig = 0; ig < G.size(); ++ig) {
+
+            for (int i = 0; i < G[ig].size(); ++i) {
+                if (!G[ig][i].present_) continue;
+                for (int j : G[ig][i].neighbors_) {
+                    if (!G[ig][j].present_) continue;
+
+                    for (int ic = 0; ic < clustersInLayers.size(); ++ic) {
+                        if (ic == ig) {
+                            continue;
+                        }
+                        if (
+                            findComponent(i, clustersInLayers[ic]) !=
+                            findComponent(j, clustersInLayers[ic]
+                        )) {
+                            keepGoing = true;
+                            G[ig].removeEdge(i, j);
+                        }
+                    }
                 }
             }
         }
@@ -208,6 +255,33 @@ std::pair<std::set<int>, int> removeArticulationPoints(Graph &G1, Graph &G2) {
         }
         if (G2[i].present_ && gcc.find(i) == gcc.end()) {
             G2.removeNode(i);
+        }
+    }
+
+    return std::make_pair(artPoints, gccSize);
+}
+
+std::pair<std::set<int>, int> removeArticulationPoints(std::vector<Graph> &G) {
+
+    cascadeRemoveLinks(G);
+    const auto &gccSizeAndComp = maxComponentSize(G[0]);
+    int gccSize = gccSizeAndComp.first;
+    const auto &gcc = gccSizeAndComp.second;
+
+    for (int ig = 0; ig < G.size(); ++ig) {
+        for (int i = 0; i < G[ig].size(); ++i) {
+            if (G[ig][i].present_ && gcc.find(i) == gcc.end()) {
+                G[ig].removeNode(i);
+            }
+        }
+    }
+
+    const auto &artPoints = articulationPointsMultiplex(G);
+    for (int ig = 0; ig < G.size(); ++ig) {
+        for (int i : artPoints) {
+            if (G[ig][i].present_) {
+                G[ig].removeNode(i);
+            }
         }
     }
 

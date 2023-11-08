@@ -36,6 +36,6 @@ void runERMonoplex(
     const int nRuns
 );
 
-void runFromFile(std::string pathToLayerData);
+void runFromFile(int nLayers, int nNodes);
 
 void runJsonTest();
