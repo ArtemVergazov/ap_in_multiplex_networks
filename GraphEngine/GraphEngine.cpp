@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 100000;
+    constexpr int N = 50000;
     constexpr double cMin = 0;
     constexpr double cMax = 12;
     constexpr int cNum = 200;
@@ -27,7 +27,8 @@ int main(int argc, char **argv) {
     //runERMonoplex(N, cMin, cMax, cNum, nRuns);
     //test();
     //runJsonTest();
-    runFromFile(2, 4458);
+    //runFromFile(2, 4458);
+    runThreeLayered(N, cMin, cMax, cNum, nRuns);
 
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);

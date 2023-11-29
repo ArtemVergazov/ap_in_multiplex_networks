@@ -39,3 +39,11 @@ void runERMonoplex(
 void runFromFile(int nLayers, int nNodes);
 
 void runJsonTest();
+
+void runThreeLayered(
+    const int N,
+    const double cMin,
+    const double cMax,
+    const int cNum,
+    const int nRuns
+);

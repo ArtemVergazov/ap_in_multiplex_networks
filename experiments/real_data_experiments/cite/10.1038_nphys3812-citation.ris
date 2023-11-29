@@ -1,0 +1,19 @@
+TY  - JOUR
+AU  - Kleineberg, Kaj-Kolja
+AU  - Boguñá, Marián
+AU  - Ángeles Serrano, M.
+AU  - Papadopoulos, Fragkiskos
+PY  - 2016
+DA  - 2016/11/01
+TI  - Hidden geometric correlations in real multiplex networks
+JO  - Nature Physics
+SP  - 1076
+EP  - 1081
+VL  - 12
+IS  - 11
+AB  - Real networks often form interacting parts of larger and more complex systems. Examples can be found in different domains, ranging from the Internet to structural and functional brain networks. Here, we show that these multiplex systems are not random combinations of single network layers. Instead, they are organized in specific ways dictated by hidden geometric correlations between the layers. We find that these correlations are significant in different real multiplexes, and form a key framework for answering many important questions. Specifically, we show that these geometric correlations facilitate the definition and detection of multidimensional communities, which are sets of nodes that are simultaneously similar in multiple layers. They also enable accurate trans-layer link prediction, meaning that connections in one layer can be predicted by observing the hidden geometric space of another layer. And they allow efficient targeted navigation in the multilayer system using only local knowledge, outperforming navigation in the single layers only if the geometric correlations are sufficiently strong.
+SN  - 1745-2481
+UR  - https://doi.org/10.1038/nphys3812
+DO  - 10.1038/nphys3812
+ID  - Kleineberg2016
+ER  - 
