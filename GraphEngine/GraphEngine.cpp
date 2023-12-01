@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 50000;
+    constexpr int N = 100000;
     constexpr double cMin = 0;
     constexpr double cMax = 12;
     constexpr int cNum = 200;
