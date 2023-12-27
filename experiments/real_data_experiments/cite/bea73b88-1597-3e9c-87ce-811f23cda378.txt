@@ -1,0 +1,14 @@
+@article{bea73b88-1597-3e9c-87ce-811f23cda378,
+ ISSN = {00380431},
+ URL = {http://www.jstor.org/stable/2785979},
+ author = {James Coleman and Elihu Katz and Herbert Menzel},
+ journal = {Sociometry},
+ number = {4},
+ pages = {253--270},
+ publisher = {[American Sociological Association, Sage Publications, Inc.]},
+ title = {The Diffusion of an Innovation Among Physicians},
+ urldate = {2023-12-18},
+ volume = {20},
+ year = {1957}
+}
+
