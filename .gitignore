@@ -10,6 +10,8 @@ Release/
 saeed_code
 multiplex_embeddings_data
 cpp_data
+*.exe
+*.pyc
 
 *work_revision.pdf
 *work_revision.png
