@@ -18,3 +18,8 @@ void createErdosRenyiNetwork(
     Graph &network, const int N, const double c,
     const unsigned long seed = static_cast<unsigned long>(time(NULL))
 );
+
+void createHyperbolicNetwork(
+    Graph &network, const int N, const double c,
+    const unsigned long seed = static_cast<unsigned long>(time(NULL))
+);

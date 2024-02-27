@@ -32,7 +32,6 @@ int main(int argc, char **argv) {
 
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
-
     std::cout << "Elapsed time: " << elapsed.count() * 1e-9 << " seconds\n";
 
     getchar();

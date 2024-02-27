@@ -88,7 +88,7 @@ def PrintCoordinates(r,theta,kappa,name):
 	file = open(name,"w")
 	N=len(r)
 	for i in range(N):
-		print(file, i, r[i], theta[i], kappa[i])
+		print(i, r[i], theta[i], kappa[i], file=file)
 	file.close()
 
 def CreateNetworks(kappa, theta, T, kbar):
@@ -111,7 +111,7 @@ def CreateNetworks(kappa, theta, T, kbar):
 def PrintNetwork(links,name):
 	file = open(name,"w")
 	for i in links:
-		print(file, i[0],i[1])
+		print(i[0], i[1], file=file)
 
 def ReadLinks(name):
 	links=[]
@@ -154,7 +154,7 @@ def PlotNetwork(links, r, theta, name):
 	for x in links:
 		i = x[0]
 		j = x[1]
-		ax1.plot([theta[i],theta[j]], [r[i],r[j]],'-',color = 'maroon', linewidth = 0.01, alpha=0.2)
+		ax1.plot([theta[i],theta[j]], [r[i],r[j]],'-',color = 'k', linewidth = 0.01, alpha=0.2)
 
 	ax1.plot(theta, r,'o', color = 'orange', markeredgecolor='orange', markersize = 1.5, alpha=0.83)
 

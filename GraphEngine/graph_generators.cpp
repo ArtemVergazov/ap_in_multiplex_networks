@@ -122,3 +122,13 @@ void createErdosRenyiNetwork(
 
     delete randNumb;
 }
+
+void createHyperbolicNetwork(
+    Graph &network, const int N,
+    const double c1, const double c2,
+    const double nu, const double g,
+    const 
+    const unsigned long seed
+) {
+
+}

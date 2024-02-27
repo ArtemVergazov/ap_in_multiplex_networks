@@ -1,10 +1,13 @@
 import re
 import os, sys
-import numpy as np
-import time
-import numpy.random as rnd
 import subprocess
+import time
+
+import numpy as np
+import numpy.random as rnd
+
 import Hyperbolic as hyp
+from draw_hyperbolic import draw_hyperbolic
 
 ############################# Adjust GMM Parameters ###############################
 #random number generator seed
@@ -12,14 +15,14 @@ seed=10
 
 L=2
 N=5000
-nu=0.5
-g=0.5
+nu=1.
+g=1.
 
-gamma1=2.5
+gamma1=3.
 kbar1=6.0
 T1=0.4
 
-gamma2=2.5
+gamma2=3.
 kbar2=6.0
 T2=0.4
 
@@ -68,28 +71,28 @@ hyp.PrintCoordinates(r2[:],theta2[:],kappa2[:],"coords2.txt")
 
 #Do this part Fast in C++
 
-links1=hyp.CreateNetworks(kappa1,theta1,T1,kbar1)
-links2=hyp.CreateNetworks(kappa2,theta2,T2,kbar2)
+# links1=hyp.CreateNetworks(kappa1,theta1,T1,kbar1)
+# links2=hyp.CreateNetworks(kappa2,theta2,T2,kbar2)
 
-hyp.PrintNetwork(links1,"el1.txt")
-hyp.PlotNetwork(links1,r1,theta1,"layer1")
+# hyp.PrintNetwork(links1,"el1.txt")
+# hyp.PlotNetwork(links1,r1,theta1,"layer1")
 
-hyp.PrintNetwork(links2,"el2.txt")
-hyp.PlotNetwork(links2,r2,theta2,"layer2")
-
-
-os.chdir('experiments/hyperbolic')
-
-# subprocess.call(["hyperb.exe","coords1.txt",str(seed),str(N),str(kbar1),str(T1)])
-# links1=hyp.ReadLinks("links.coords1.txt")
-# #hyp.PlotNetwork(links1[:],r1[:],theta1[:],"layer1")
+# hyp.PrintNetwork(links2,"el2.txt")
+# hyp.PlotNetwork(links2,r2,theta2,"layer2")
 
 
-# subprocess.call(["hyperb.exe","coords2.txt",str(seed+1),str(N),str(kbar2),str(T2)])
-# links2=hyp.ReadLinks("links.coords2.txt")
-#hyp.PlotNetwork(links2[:],r2[:],theta2[:],"layer2")
+# os.chdir('experiments/hyperbolic')
+
+subprocess.call(["hyperb.exe","coords1.txt",str(seed),str(N),str(kbar1),str(T1)])
+links1=hyp.ReadLinks("links.coords1.txt")
+# hyp.PlotNetwork(links1[:],r1[:],theta1[:],"layer1")
 
 
+subprocess.call(["hyperb.exe","coords2.txt",str(seed+1),str(N),str(kbar2),str(T2)])
+links2=hyp.ReadLinks("links.coords2.txt")
+# hyp.PlotNetwork(links2[:],r2[:],theta2[:],"layer2")
+
+draw_hyperbolic(links1, links2, r1, r2, theta1, theta2, 'corr_0')
 
 t2=time.time()
 
