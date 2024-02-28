@@ -39,7 +39,95 @@ def max_comp(g):
     return max(nx.connected_components(g), key=len)
 
 
-def draw_hyperbolic(links1, links2, r1, r2, theta1, theta2, name):
+def draw_hyperbolic_monoplex(links, r, theta, ax=None):
+    plt.rc('text', usetex=True)
+    plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
+    plt.rcParams['xtick.major.pad'] = 8
+    plt.rcParams['ytick.major.pad'] = 8
+
+    if ax is None:
+        fig = plt.figure()
+        fig.set_size_inches(5, 5)
+
+        ax = fig.add_subplot(1, 1, 1, projection='polar')
+    else:
+        fig = ax.figure
+
+    print('\nStarting AP removal')
+
+    r = np.array(r)
+    theta = np.array(theta)
+
+    G = [nx.from_edgelist(links)]
+
+    for i, j in links:
+        ax.plot(
+            [theta[i], theta[j]], [r[i], r[j]], '-',
+            color='k', linewidth=.01, alpha=.2, label=None,
+        )
+
+    it = 1
+    while True:
+        print(f'AP removal: iteration {it}')
+        G = cascade_remove_links(G)
+
+        removed_at_this_iteration = []
+
+        gcc = max_comp(G[0])
+        for g in G:
+            to_remove = [n for n in g if n not in gcc]
+            g.remove_nodes_from(to_remove)
+            removed_at_this_iteration.extend(to_remove)
+
+        art_points = articulation_points_multiplex(G)
+
+        for g in G:
+            g.remove_nodes_from(art_points)
+        removed_at_this_iteration.extend(art_points)
+        removed_at_this_iteration = list(set(removed_at_this_iteration))
+
+        print(f'AP removal: {len(art_points)} APs')
+        print(f'AP removal: removed {len(removed_at_this_iteration)} nodes')
+
+        ax.plot(
+            theta[removed_at_this_iteration], r[removed_at_this_iteration], 'o',
+            markersize=1.5,
+            alpha=.83,
+            label=fr'$\mathrm{{Removed\ at\ iteration\ {it}}}$',
+        )
+        it += 1
+
+        if not art_points:
+            break
+
+    rgb_nodes = [n for n in G[0]]
+    ax.plot(
+        theta[list(rgb_nodes)], r[list(rgb_nodes)], 'o',
+        markersize=1.5,
+        alpha=.83,
+        color='#f78fb3',
+        label=fr'$\mathrm{{RGCC}}$',
+    )
+
+    ax.grid(False)
+    ax.spines['polar'].set_visible(False)
+    ax.set_yticklabels([])
+    ax.set_xticklabels([])
+
+    fig.tight_layout()
+
+
+def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, name):
+    plt.rc('text', usetex=True)
+    plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
+    plt.rcParams['xtick.major.pad'] = 8
+    plt.rcParams['ytick.major.pad'] = 8
+
+    fig = plt.figure()
+    fig.set_size_inches(5, 5)
+
+    ax1 = fig.add_subplot(1, 2, 1, projection='polar')
+    ax2 = fig.add_subplot(1, 2, 2, projection='polar')
 
     print('\nStarting AP removal')
 
@@ -51,16 +139,6 @@ def draw_hyperbolic(links1, links2, r1, r2, theta1, theta2, name):
     G = [nx.from_edgelist(links) for links in [links1, links2]]
     G[0].add_nodes_from([n for n in G[1]])
     G[1].add_nodes_from([n for n in G[0]])
-
-    fig = plt.figure()
-    fig.set_size_inches(5, 5)
-    plt.rc('text', usetex=True)
-    plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
-    plt.rcParams['xtick.major.pad'] = 8
-    plt.rcParams['ytick.major.pad'] = 8
-
-    ax1 = fig.add_subplot(1, 2, 1, projection='polar')
-    ax2 = fig.add_subplot(1, 2, 2, projection='polar')
 
     for i, j in links1:
         ax1.plot([theta1[i], theta1[j]], [r1[i], r1[j]], '-', color='k', linewidth=.01, alpha=.2, label=None)
