@@ -1,14 +1,19 @@
-﻿#include "graph_generators.h"
+﻿#define _USE_MATH_DEFINES
+
+#include "RNG_MT.h"
+
+#include "graph_generators.h"
+#include "hyperbolic.h"
+
 #include <vector>
 #include <cmath> // std::abs, std::pow, std::sqrt, std::log
 #include <algorithm> // std::lower_bound
-#include "RNG_MT.h"
+#include <cstdlib> // abs
 
 void createScaleFreeNetwork(
     Graph &network, const int N, const double gamma, 
-    const double c, const unsigned long seed) {
+    const double c, class MTRand *randNumb) {
 
-    class MTRand *randNumb = new MTRand((unsigned long)seed);
     network = Graph(N);
     std::vector<double> cdf;
 
@@ -46,46 +51,14 @@ void createScaleFreeNetwork(
                 randNumb->randExc()
             ) - cdf.begin();
             
-            condition = !network.addEdge(source, target);
-
-            if (condition) {
-                continue;
-                //if (network[source].has(target)) {
-                //    break;
-                //}
-            }
+            network.addEdge(source, target);
         }
     }
-
-    //network.buildDegreeVector();
-    delete randNumb;
 }
-
-//void createErdosRenyiNetwork(
-//    Graph &network, const int N, const double c,
-//    const unsigned long seed
-//) {
-//
-//    class MTRand *randNumb = new MTRand(seed);
-//    network = Graph(N);
-//
-//    double p = c / (N-1.);
-//
-//    for (int source = 0; source < N - 1; ++source) {
-//        for (int target = source + 1; target < N; ++target) {
-//
-//            if (randNumb->randExc() < p) {
-//                network.addEdge(source, target);
-//            }
-//        }
-//    }
-//
-//    delete randNumb;
-//}
 
 void createErdosRenyiNetwork(
     Graph &network, const int N, const double c,
-    const unsigned long seed
+    class MTRand *randNumb
 ) {
 
     network = Graph(N);
@@ -101,7 +74,6 @@ void createErdosRenyiNetwork(
         return;
     }
 
-    class MTRand *randNumb = new MTRand((unsigned long)seed);
     double lp = std::log(1. - p);
 
     // Nodes in graph are from 0, n - 1 (start with v as the second node index)
@@ -119,16 +91,53 @@ void createErdosRenyiNetwork(
             network.addEdge(v, w);
         }
     }
-
-    delete randNumb;
 }
 
 void createHyperbolicNetwork(
-    Graph &network, const int N,
-    const double c1, const double c2,
-    const double nu, const double g,
-    const 
-    const unsigned long seed
+    Graph &network, const int N, const double c,
+    const double T, const double gamma,
+    const std::vector<double> &kappa,
+    const std::vector<double> &theta,
+    class MTRand *randNumb
 ) {
 
+    network = Graph(N);
+
+    constexpr double twoPi = 2. * M_PI;
+    double mu = sin(M_PI * T) / (twoPi * c * T);
+    double invT = 1. / T;
+
+    for (int i = 0; i < N - 1; ++i) {
+        for (int j = 0; j < N; ++j) {
+            double dTheta = N / twoPi * abs(M_PI - abs(M_PI - abs(theta[i] - theta[j])));
+            double threshold = 1. / (1. + pow(dTheta / (mu * kappa[i] * kappa[j]), invT));
+            if (randNumb->randExc() < threshold) {
+                network.addEdge(i, j);
+            }
+        }
+    }
+}
+
+std::pair<std::vector<double>, std::vector<double>> createHyperbolicNetwork(
+    Graph &network, const int N, const double c,
+    const double T, const double gamma,
+    class MTRand *randNumb
+) {
+
+    double kmin = calculateKMin(c, gamma);
+    double C = calculateC(c, T, gamma);
+    double R = calculateR(N, C);
+
+    auto kappa = sampleKappa(N, kmin, gamma, randNumb);
+    auto theta = sampleTheta(N, randNumb);
+    //auto r = changeVariablesFromS1ToH2(N, kappa, R, kmin);
+
+    //for (int i = 0; i < N; ++i) {
+    //    if (r[i] < 0. || theta[i] < 0. || kappa[i] < 0.) {
+    //        throw std::runtime_error("Error when generating network: self-edge!\n\n");
+    //    }
+    //}
+
+    createHyperbolicNetwork(network, N, c, T, gamma, kappa, theta, randNumb);
+    return std::make_pair(kappa, theta);
 }

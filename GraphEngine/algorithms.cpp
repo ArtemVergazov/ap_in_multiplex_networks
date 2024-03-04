@@ -3,6 +3,7 @@
 #include <stdexcept> // std::runtime_error
 #include <string>
 #include <cstddef> // std::size_t
+#include <utility> // std::pair
 
 // A fast BFS node generator
 std::set<int> plainBfs(const Graph &G, int source) {

@@ -7,28 +7,29 @@
 
 using json = nlohmann::json;
 
-void test();
-
 int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 100000;
+    constexpr int N = 50000;
     constexpr double cMin = 0;
-    constexpr double cMax = 20;
+    constexpr double cMax = 12;
     constexpr int cNum = 200;
     constexpr int nRuns = 10;
-    constexpr double gamma1 = 2.5;
-    constexpr double gamma2 = 2.5;
+    constexpr double gamma1 = 3.;
+    constexpr double gamma2 = 3.;
+    constexpr double T1 = .4;
+    constexpr double T2 = .4;
 
-    runSF(N, cMin, cMax, cNum, gamma1, gamma2, nRuns);
-    //runER(N, cMin, cMax, cNum, nRuns);
-    //runSFNoCascade(N, cMin, cMax, cNum, gamma, nRuns);
-    //runERMonoplex(N, cMin, cMax, cNum, nRuns);
-    //test();
-    //runJsonTest();
-    //runFromFile(2, 4458);
-    //runThreeLayered(N, cMin, cMax, cNum, nRuns);
+    std::string outputFileName = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\results.json";
+
+    MonoplexPercolationRunBase *monoplexRun = new MonoplexPercolationRunHyperbolic(
+        N, cMin, cMax, cNum,
+        nRuns, outputFileName,
+        gamma1, T1
+    );
+    monoplexRun->run();
+    delete monoplexRun;
 
     auto end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
