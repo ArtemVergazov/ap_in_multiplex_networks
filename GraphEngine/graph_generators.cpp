@@ -11,8 +11,8 @@
 #include <cstdlib> // abs
 
 void createScaleFreeNetwork(
-    Graph &network, const int N, const double gamma, 
-    const double c, class MTRand *randNumb) {
+    Graph &network, int N, double gamma, 
+    double c, class MTRand *randNumb) {
 
     network = Graph(N);
     std::vector<double> cdf;
@@ -57,7 +57,7 @@ void createScaleFreeNetwork(
 }
 
 void createErdosRenyiNetwork(
-    Graph &network, const int N, const double c,
+    Graph &network, int N, double c,
     class MTRand *randNumb
 ) {
 
@@ -93,22 +93,22 @@ void createErdosRenyiNetwork(
     }
 }
 
-void createHyperbolicNetwork(
-    Graph &network, const int N, const double c,
-    const double T, const double gamma,
+void makeLinksHyperbolic(
+    Graph &network,
+    int N, double T, double c,
     const std::vector<double> &kappa,
     const std::vector<double> &theta,
     class MTRand *randNumb
 ) {
 
-    network = Graph(N);
-
     constexpr double twoPi = 2. * M_PI;
     double mu = sin(M_PI * T) / (twoPi * c * T);
     double invT = 1. / T;
 
+    network = Graph(N);
+
     for (int i = 0; i < N - 1; ++i) {
-        for (int j = 0; j < N; ++j) {
+        for (int j = i + 1; j < N; ++j) {
             double dTheta = N / twoPi * abs(M_PI - abs(M_PI - abs(theta[i] - theta[j])));
             double threshold = 1. / (1. + pow(dTheta / (mu * kappa[i] * kappa[j]), invT));
             if (randNumb->randExc() < threshold) {
@@ -119,17 +119,17 @@ void createHyperbolicNetwork(
 }
 
 std::pair<std::vector<double>, std::vector<double>> createHyperbolicNetwork(
-    Graph &network, const int N, const double c,
-    const double T, const double gamma,
+    Graph &network, int N, double c,
+    double T, double gamma,
     class MTRand *randNumb
 ) {
 
     double kmin = calculateKMin(c, gamma);
-    double C = calculateC(c, T, gamma);
-    double R = calculateR(N, C);
+    //double C = calculateC(c, T, gamma);
+    //double R = calculateR(N, C);
 
-    auto kappa = sampleKappa(N, kmin, gamma, randNumb);
-    auto theta = sampleTheta(N, randNumb);
+    const auto &kappa = sampleKappa(N, kmin, gamma, randNumb);
+    const auto &theta = sampleTheta(N, randNumb);
     //auto r = changeVariablesFromS1ToH2(N, kappa, R, kmin);
 
     //for (int i = 0; i < N; ++i) {
@@ -138,6 +138,25 @@ std::pair<std::vector<double>, std::vector<double>> createHyperbolicNetwork(
     //    }
     //}
 
-    createHyperbolicNetwork(network, N, c, T, gamma, kappa, theta, randNumb);
+    makeLinksHyperbolic(network, N, T, c, kappa, theta, randNumb);
     return std::make_pair(kappa, theta);
+}
+
+void createHyperbolicNetwork(
+    Graph &network, int N,
+    double c1, double c2,
+    double T2,
+    double gamma1, double gamma2,
+    const std::vector<double> &kappa1,
+    const std::vector<double> &theta1,
+    double nu, double g,
+    class MTRand *randNumb
+) {
+
+    double kmin1 = calculateKMin(c1, gamma1);
+    double kmin2 = calculateKMin(c2, gamma2);
+    const auto &kappa2 = sampleConditionalKappa(N, nu, kappa1, kmin1, gamma1, kmin2, gamma2, randNumb);
+    const auto &theta2 = sampleConditionalTheta(N, g, theta1, randNumb);
+    makeLinksHyperbolic(network, N, T2, c2, kappa2, theta2, randNumb);
+
 }

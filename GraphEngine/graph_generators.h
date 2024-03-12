@@ -13,27 +13,30 @@
 
 void createScaleFreeNetwork(
     Graph &network,
-    const int N, const double gamma, const double c,
+    int N, double gamma, double c,
     class MTRand *randNumb
 );
 
 void createErdosRenyiNetwork(
-    Graph &network, const int N, const double c,
-    class MTRand *randNumb
-);
-
-// Condition on previously created kappa and theta
-void createHyperbolicNetwork(
-    Graph &network, const int N, const double c,
-    const double T, const double gamma,
-    const std::vector<double> &kappa1,
-    const std::vector<double> &theta1,
+    Graph &network, int N, double c,
     class MTRand *randNumb
 );
 
 // Create a network from scratch and return kappa and theta created
 std::pair<std::vector<double>, std::vector<double>> createHyperbolicNetwork(
-    Graph &network, const int N, const double c,
-    const double T, const double gamma,
+    Graph &network, int N, double c,
+    double T, double gamma,
+    class MTRand *randNumb
+);
+
+// Condition on previously created kappa and theta
+void createHyperbolicNetwork(
+    Graph &network, int N,
+    double c1, double c2,
+    double T2,
+    double gamma1, double gamma2,
+    const std::vector<double> &kappa1,
+    const std::vector<double> &theta1,
+    double nu, double g,
     class MTRand *randNumb
 );
