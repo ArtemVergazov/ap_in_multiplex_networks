@@ -175,8 +175,9 @@ private:
     const double g_;
 };
 
-void runMultiplexCorrelationPercolationHyperbolic(
-    int N, double c,
+void runMultiplexAngularCorrelationPercolationHyperbolic(
+    int N, double c, double nu,
+    double gMin, double gMax, int gNum,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,

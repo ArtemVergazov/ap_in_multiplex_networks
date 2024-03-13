@@ -183,6 +183,69 @@ void MultiplexPercolationRunHyperbolic::createNetworks_(
     createHyperbolicNetwork(G2, N_, c, c, T2_, gamma1_, gamma2_, kappaTheta.first, kappaTheta.second, nu_, g_, randNumb2);
 }
 
+void runMultiplexAngularCorrelationPercolationHyperbolic(
+    int N, double c, double nu,
+    double gMin, double gMax, int gNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileName
+) {
+    json output;
+    output["N"] = N;
+    output["nruns"] = nRuns;
+    output["grange"] = { gMin, gMax, gNum };
+    json results;
+    double dg = (gMax - gMin) / (gNum - 1);
+    unsigned long seed = 1;
+
+    for (int i = 0; i < gNum; ++i) {
+
+        double g = gMin + i * dg;
+        results[i]["g"] = g;
+        results[i]["runs"] = {};
+
+#ifdef OUTPUTS
+        std::cout << "\n\ng = " << g << std::endl;
+#endif // OUTPUTS
+
+        for (int runId = 0; runId < nRuns; ++runId) {
+
+            results[i]["runs"].push_back({});
+            results[i]["runs"][runId]["run_id"] = runId;
+
+            class MTRand *randNumb1 = new MTRand((unsigned long int)(seed + seed - 1));
+            class MTRand *randNumb2 = new MTRand((unsigned long int)(seed + seed));
+            Graph G1, G2;
+            const auto &kappaTheta = createHyperbolicNetwork(G1, N, c, T1, gamma1, randNumb1);
+            createHyperbolicNetwork(
+                G2, N, c, c, T2,
+                gamma1, gamma2,
+                kappaTheta.first, kappaTheta.second,
+                nu, g,
+                randNumb2
+            );
+            delete randNumb1;
+            delete randNumb2;
+            ++seed;
+            
+            int gccSize = 0;
+            while (true) {
+
+                auto artPointsGccSize = removeArticulationPoints(G1, G2);
+                const auto &artPoints = artPointsGccSize.first;
+                gccSize = artPointsGccSize.second;
+                if (!artPoints.size())
+                    break;
+            }
+            results[i]["runs"][runId]["rgcc_size"] = gccSize;
+        }
+        output["results"] = results;
+        std::ofstream o(outputFileName);
+        o << std::setw(4) << output << std::endl;
+    }
+}
+
 void runFromFile(int nLayers, int nNodes) {
 
     std::string pathToLayerData("C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\experiments\\real_data_experiments\\cpp_data");
