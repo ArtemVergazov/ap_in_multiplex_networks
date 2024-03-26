@@ -185,7 +185,7 @@ void MultiplexPercolationRunHyperbolic::createNetworks_(
 
 void runMultiplexAngularCorrelationPercolationHyperbolic(
     int N, double c, double nu,
-    double gMin, double gMax, int gNum,
+    const std::vector<double> &gVec,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,
@@ -194,14 +194,13 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
     json output;
     output["N"] = N;
     output["nruns"] = nRuns;
-    output["grange"] = { gMin, gMax, gNum };
+    output["gvec"] = gVec;
     json results;
-    double dg = (gMax - gMin) / (gNum - 1);
     unsigned long seed = 1;
 
-    for (int i = 0; i < gNum; ++i) {
+    for (int i = 0; i < gVec.size(); ++i) {
 
-        double g = gMin + i * dg;
+        double g = gVec[i];
         results[i]["g"] = g;
         results[i]["runs"] = {};
 
@@ -244,6 +243,25 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
         std::ofstream o(outputFileName);
         o << std::setw(4) << output << std::endl;
     }
+}
+
+void runMultiplexAngularCorrelationPercolationHyperbolic(
+    int N, double c, double nu,
+    double gMin, double gMax, int gNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileName
+) {
+    std::vector<double> gVec(gNum);
+    const double dg = (gMax - gMin) / (gNum - 1);
+    for (int i = 0; i < gNum; ++i) {
+        gVec[i] = gMin + i * dg;
+    }
+
+    runMultiplexAngularCorrelationPercolationHyperbolic(
+        N, c, nu, gVec, gamma1, gamma2, T1, T2, nRuns, outputFileName
+    );
 }
 
 void runFromFile(int nLayers, int nNodes) {
