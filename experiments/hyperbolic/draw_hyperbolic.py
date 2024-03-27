@@ -93,7 +93,8 @@ def draw_hyperbolic_monoplex(links, r, theta, ax=None):
             theta[removed_at_this_iteration], r[removed_at_this_iteration], 'o',
             markersize=1.5,
             alpha=.83,
-            label=fr'$\mathrm{{Removed\ at\ iteration\ {it}}}$',
+            color='tab:blue',
+            # label=fr'$\mathrm{{Removed\ at\ iteration\ {it}}}$',
         )
         it += 1
 
