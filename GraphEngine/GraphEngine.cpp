@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 
     constexpr double c = 8;
 
-    constexpr double nu = 0;
+    constexpr double nu = 1;
     constexpr double g = 1;
 
     constexpr double gMin = 0;
@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
 
     std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
     std::string outputFileName = project_dir +
-        "\\experiments\\hyperbolic\\correlation_percolation\\results_nu_0.json";
+        "\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
         //"\\experiments\\articulation_points_monoplex\\results\\hyperbolic\\results_hyperbolic_5000.json";
 
     //MonoplexPercolationRunBase *run = new MonoplexPercolationRunHyperbolic(
