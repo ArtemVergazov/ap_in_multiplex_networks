@@ -36,7 +36,10 @@ def articulation_points_multiplex(G):
 
 
 def max_comp(g):
-    return max(nx.connected_components(g), key=len)
+    comps = list(nx.connected_components(g))
+    if len(comps) == 0:
+        return 0
+    return max(comps, key=len)
 
 
 def draw_hyperbolic_monoplex(links, r, theta, ax=None):
@@ -118,17 +121,11 @@ def draw_hyperbolic_monoplex(links, r, theta, ax=None):
     fig.tight_layout()
 
 
-def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, name):
+def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2):
     plt.rc('text', usetex=True)
     plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
     plt.rcParams['xtick.major.pad'] = 8
     plt.rcParams['ytick.major.pad'] = 8
-
-    fig = plt.figure()
-    fig.set_size_inches(5, 5)
-
-    ax1 = fig.add_subplot(1, 2, 1, projection='polar')
-    ax2 = fig.add_subplot(1, 2, 2, projection='polar')
 
     print('\nStarting AP removal')
 
@@ -150,52 +147,52 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, name):
     while True:
         print(f'AP removal: iteration {it}')
         G = cascade_remove_links(G)
-
-        removed_at_this_iteration = []
-
         gcc = max_comp(G[0])
         for g in G:
-            to_remove = [n for n in g if n not in gcc]
-            g.remove_nodes_from(to_remove)
-            removed_at_this_iteration.extend(to_remove)
+            g.remove_nodes_from([n for n in g if n not in gcc])
 
         art_points = articulation_points_multiplex(G)
 
         for g in G:
             g.remove_nodes_from(art_points)
-        removed_at_this_iteration.extend(art_points)
-        removed_at_this_iteration = list(set(removed_at_this_iteration))
 
         print(f'AP removal: {len(art_points)} APs')
-        print(f'AP removal: removed {len(removed_at_this_iteration)} nodes')
-
-        ax1.plot(
-            theta1[removed_at_this_iteration], r1[removed_at_this_iteration], 'o',
-            markersize=1.5,
-            alpha=.83,
-        )
-        ax2.plot(
-            theta2[removed_at_this_iteration], r2[removed_at_this_iteration], 'o',
-            markersize=1.5,
-            alpha=.83,
-            label=fr'$\mathrm{{Removed\ at\ iteration\ {it}}}$',
-        )
         it += 1
 
         if not art_points:
             break
 
-    rgb_nodes = [n for n in G[0]]
+    rgb_nodes = list(G[0].nodes)
     assert sorted(rgb_nodes) == sorted([n for n in G[1]]), 'RGBs must be the same'
-    ax1.plot(theta1[list(rgb_nodes)], r1[list(rgb_nodes)], 'o',
-            markersize=1.5,
-            alpha=.83,
+
+    ax1.plot(
+        np.delete(theta1, rgb_nodes), np.delete(r1, rgb_nodes), 'o',
+        markersize=1.5,
+        alpha=.83,
+        label=None,
+        color='orange',
     )
     ax2.plot(
-        theta2[list(rgb_nodes)], r2[list(rgb_nodes)], 'o',
+        np.delete(theta2, rgb_nodes), np.delete(r2, rgb_nodes), 'o',
+        markersize=1.5,
+        alpha=.83,
+        label=None,
+        color='orange',
+    )
+
+    ax1.plot(
+        theta1[rgb_nodes], r1[rgb_nodes], 'o',
+        markersize=1.5,
+        alpha=.83,
+        color='#f78fb3',
+        label=None,
+    )
+    ax2.plot(
+        theta2[rgb_nodes], r2[rgb_nodes], 'o',
         markersize=1.5,
         alpha=.83,
         label=fr'$\mathrm{{RGCC}}$',
+        color='#f78fb3',
     )
 
     ax1.grid(False)
@@ -213,18 +210,11 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, name):
     #ax1.set_xlim(-0.05, 1.05)
     #ax1.set_ylim(0.15, 0.55)
 
-    ax2.legend(
-        bbox_to_anchor=(1, 1, .5, .15),
-        loc='upper left',
-        numpoints=1,
-        markerscale=1.,
-        prop={'size': 6},
-    )
-
-    fig.tight_layout()
-    fig.savefig(
-        f'{name}.pdf',
-        bbox_inches='tight',
-    )
-    plt.close(fig)
+    # ax2.legend(
+    #     bbox_to_anchor=(1, 1, .5, .15),
+    #     loc='upper left',
+    #     numpoints=1,
+    #     markerscale=1.,
+    #     prop={'size': 26},
+    # )
 
