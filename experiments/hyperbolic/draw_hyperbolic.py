@@ -122,10 +122,10 @@ def draw_hyperbolic_monoplex(links, r, theta, ax=None):
 
 
 def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2):
-    plt.rc('text', usetex=True)
-    plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
-    plt.rcParams['xtick.major.pad'] = 8
-    plt.rcParams['ytick.major.pad'] = 8
+    # plt.rc('text', usetex=True)
+    # plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
+    # plt.rcParams['xtick.major.pad'] = 8
+    # plt.rcParams['ytick.major.pad'] = 8
 
     print('\nStarting AP removal')
 
