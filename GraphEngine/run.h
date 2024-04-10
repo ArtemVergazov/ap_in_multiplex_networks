@@ -149,7 +149,7 @@ public:
         std::string outputFileName,
         double gamma1, double gamma2,
         double T1, double T2,
-        double nu, double g
+        double nu, double angularCorrelation
     ) :
         MultiplexPercolationRunBase(N, cMin, cMax, cNum, nRuns, outputFileName),
         gamma1_(gamma1),
@@ -157,7 +157,7 @@ public:
         T1_(T1),
         T2_(T2),
         nu_(nu),
-        g_(g) {}
+        angularCorrelation_(angularCorrelation) {}
 private:
     void createNetworks_(
         Graph &G1,
@@ -172,12 +172,12 @@ private:
     const double T1_;
     const double T2_;
     const double nu_;
-    const double g_;
+    const double angularCorrelation_;
 };
 
 void runMultiplexAngularCorrelationPercolationHyperbolic(
     int N, double c, double nu,
-    const std::vector<double> &gVec,
+    const std::vector<double> &angularCorrelationVec,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,
@@ -186,11 +186,22 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
 
 void runMultiplexAngularCorrelationPercolationHyperbolic(
     int N, double c, double nu,
-    double gMin, double gMax, int gNum,
+    double angularCorrelationMin, double angularCorrelationMax, int angularCorrelationNum,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,
     std::string outputFileName
+);
+
+void seriesOfMultiplexHyperbolicRuns(
+    int N, double nu,
+    double cMin, double cMax, int cNum,
+    double angularCorrelationMin, double angularCorrelationMax, int angularCorrelationNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileNameTemplate,
+    const std::vector<std::string> &angularCorrelationsLabels
 );
 
 void runSFNoCascade(
