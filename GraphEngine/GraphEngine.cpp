@@ -14,9 +14,9 @@ int main(int argc, char **argv) {
 
     constexpr int N = 5000;
 
-    constexpr double cMin = .01;
-    constexpr double cMax = 12;
-    constexpr int cNum = 200;
+    constexpr double cMin = 7;
+    constexpr double cMax = 10;
+    constexpr int cNum = 61;
 
     constexpr int nRuns = 100;
 
@@ -28,19 +28,25 @@ int main(int argc, char **argv) {
 
     constexpr double c = 8;
 
-    constexpr double nu = 1;
-    constexpr double g = 1;
+    constexpr double nu = .4;
+    constexpr double angularCorrelation = 1;
 
-    constexpr double gMin = 0;
-    constexpr double gMax = 1;
-    constexpr int gNum = 10;
+    constexpr double angularCorrelationMin = 0;
+    constexpr double angularCorrelationMax = 1;
+    constexpr int angularCorrelationNum = 6;
 
-    const std::vector<double> gVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
+    const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
 
-    std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
-    std::string outputFileName = project_dir +
-        "\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
+    const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
+    //std::string outputFileName = project_dir +
+        //"\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
         //"\\experiments\\articulation_points_monoplex\\results\\hyperbolic\\results_hyperbolic_5000.json";
+        //"\\experiments\\articulation_points_multiplex\\results\\hyperbolic_5000\\results_hyperbolic_5000.json";
+        //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0_g_1.json";
+    const std::string outputFileNameTemplate = project_dir +
+        "\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.4_g_";
+
+    const std::vector<std::string> angularCorrelationLabels{ "0", "0.2", "0.4", "0.6", "0.8", "1" };
 
     //MonoplexPercolationRunBase *run = new MonoplexPercolationRunHyperbolic(
     //    N, cMin, cMax, cNum,
@@ -53,19 +59,30 @@ int main(int argc, char **argv) {
     //    nRuns, outputFileName,
     //    gamma1, gamma2,
     //    T1, T2,
-    //    nu, g
+    //    nu, angularCorrelation
     //);
 
     //run->run();
     //delete run;
 
-    runMultiplexAngularCorrelationPercolationHyperbolic(
-        N, c, nu,
-        gVec,
+    //runMultiplexAngularCorrelationPercolationHyperbolic(
+    //    N, c, nu,
+    //    angularCorrelationVec,
+    //    gamma1, gamma2,
+    //    T1, T2,
+    //    nRuns,
+    //    outputFileName
+    //);
+
+    seriesOfMultiplexHyperbolicRuns(
+        N, nu,
+        cMin, cMax, cNum,
+        angularCorrelationMin, angularCorrelationMax, angularCorrelationNum,
         gamma1, gamma2,
         T1, T2,
         nRuns,
-        outputFileName
+        outputFileNameTemplate,
+        angularCorrelationLabels
     );
 
     auto end = std::chrono::high_resolution_clock::now();

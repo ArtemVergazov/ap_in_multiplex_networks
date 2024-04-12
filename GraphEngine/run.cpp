@@ -89,13 +89,17 @@ void MonoplexPercolationRunHyperbolic::createNetwork_(
 }
 
 void MultiplexPercolationRunBase::run() const {
+    json output;
+    output["N"] = N_;
+    output["nruns"] = nRuns_;
+    output["crange"] = { cMin_, cMax_, cNum_ };
     json results;
     double dc = (cMax_-cMin_) / (cNum_-1);
     unsigned long seed = 1;
 
     for (int i = 0; i < cNum_; ++i) {
 
-        double c = cMin_ + i * dc;
+        double c = cMin_ + i*dc;
         results[i]["c"] = c;
         results[i]["runs"] = {};
 
@@ -137,17 +141,10 @@ void MultiplexPercolationRunBase::run() const {
                     break;
             }
         }
+        output["results"] = results;
+        std::ofstream o(outputFileName_);
+        o << std::setw(4) << output << std::endl;
     }
-
-    json output;
-    output["N"] = N_;
-    output["nruns"] = nRuns_;
-    output["crange"] = { cMin_, cMax_, cNum_ };
-    output["results"] = results;
-
-    // Write prettified JSON to another file
-    std::ofstream o(outputFileName_);
-    o << std::setw(4) << output << std::endl;
 }
 
 void MultiplexPercolationRunER::createNetworks_(
@@ -180,12 +177,12 @@ void MultiplexPercolationRunHyperbolic::createNetworks_(
     class MTRand *randNumb2
 ) const {
     const auto &kappaTheta = createHyperbolicNetwork(G1, N_, c, T1_, gamma1_, randNumb1);
-    createHyperbolicNetwork(G2, N_, c, c, T2_, gamma1_, gamma2_, kappaTheta.first, kappaTheta.second, nu_, g_, randNumb2);
+    createHyperbolicNetwork(G2, N_, c, c, T2_, gamma1_, gamma2_, kappaTheta.first, kappaTheta.second, nu_, angularCorrelation_, randNumb2);
 }
 
 void runMultiplexAngularCorrelationPercolationHyperbolic(
     int N, double c, double nu,
-    const std::vector<double> &gVec,
+    const std::vector<double> &angularCorrelationVec,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,
@@ -194,13 +191,13 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
     json output;
     output["N"] = N;
     output["nruns"] = nRuns;
-    output["gvec"] = gVec;
+    output["gvec"] = angularCorrelationVec;
     json results;
     unsigned long seed = 1;
 
-    for (int i = 0; i < gVec.size(); ++i) {
+    for (int i = 0; i < angularCorrelationVec.size(); ++i) {
 
-        double g = gVec[i];
+        double g = angularCorrelationVec[i];
         results[i]["g"] = g;
         results[i]["runs"] = {};
 
@@ -247,21 +244,46 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
 
 void runMultiplexAngularCorrelationPercolationHyperbolic(
     int N, double c, double nu,
-    double gMin, double gMax, int gNum,
+    double angularCorrelationMin, double angularCorrelationMax, int angularCorrelationNum,
     double gamma1, double gamma2,
     double T1, double T2,
     int nRuns,
     std::string outputFileName
 ) {
-    std::vector<double> gVec(gNum);
-    const double dg = (gMax - gMin) / (gNum - 1);
-    for (int i = 0; i < gNum; ++i) {
-        gVec[i] = gMin + i * dg;
+    std::vector<double> angularCorrelationVec(angularCorrelationNum);
+    const double dg = (angularCorrelationMax-angularCorrelationMin) / (angularCorrelationNum-1);
+    for (int i = 0; i < angularCorrelationNum; ++i) {
+        angularCorrelationVec[i] = angularCorrelationMin + i * dg;
     }
 
     runMultiplexAngularCorrelationPercolationHyperbolic(
-        N, c, nu, gVec, gamma1, gamma2, T1, T2, nRuns, outputFileName
+        N, c, nu, angularCorrelationVec, gamma1, gamma2, T1, T2, nRuns, outputFileName
     );
+}
+
+void seriesOfMultiplexHyperbolicRuns(
+    int N, double nu,
+    double cMin, double cMax, int cNum,
+    double angularCorrelationMin, double angularCorrelationMax, int angularCorrelationNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileNameTemplate,
+    const std::vector<std::string> &angularCorrelationsLabels
+) {
+    double dg = (angularCorrelationMax-angularCorrelationMin) / (angularCorrelationNum-1);
+    for (int i = 0; i < angularCorrelationNum; ++i) {
+        double g = angularCorrelationMin + i*dg;
+        std::cout << "\n\ng = " << g << std::endl;
+        std::string outputFileName = outputFileNameTemplate + angularCorrelationsLabels[i] + ".json";
+        MultiplexPercolationRunHyperbolic(
+            N, cMin, cMax, cNum,
+            nRuns, outputFileName,
+            gamma1, gamma2,
+            T1, T2,
+            nu, g
+        ).run();
+    }
 }
 
 void runFromFile(int nLayers, int nNodes) {
