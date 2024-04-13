@@ -28,12 +28,12 @@ int main(int argc, char **argv) {
 
     constexpr double c = 8;
 
-    constexpr double nu = .4;
+    constexpr double nu = .8;
     constexpr double angularCorrelation = 1;
 
-    constexpr double angularCorrelationMin = 0;
+    constexpr double angularCorrelationMin = .2;
     constexpr double angularCorrelationMax = 1;
-    constexpr int angularCorrelationNum = 6;
+    constexpr int angularCorrelationNum = 5;
 
     const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
         //"\\experiments\\articulation_points_multiplex\\results\\hyperbolic_5000\\results_hyperbolic_5000.json";
         //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0_g_1.json";
     const std::string outputFileNameTemplate = project_dir +
-        "\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.4_g_";
+        "\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_";
 
     const std::vector<std::string> angularCorrelationLabels{ "0", "0.2", "0.4", "0.6", "0.8", "1" };
 
