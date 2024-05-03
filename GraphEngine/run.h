@@ -193,6 +193,15 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
     std::string outputFileName
 );
 
+void runMultiplexRadialCorrelationPercolationHyperbolic(
+    int N, double c, double g,
+    double nuMin, double nuMax, int nuNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileName
+);
+
 void seriesOfMultiplexHyperbolicRuns(
     int N, double nu,
     double cMin, double cMax, int cNum,

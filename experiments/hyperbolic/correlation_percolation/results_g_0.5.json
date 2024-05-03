@@ -1,0 +1,110 @@
+{
+    "N": 50000,
+    "nruns": 1,
+    "nurange": [
+        0.0,
+        1.0,
+        11
+    ],
+    "results": [
+        {
+            "nu": 0.0,
+            "runs": [
+                {
+                    "rgcc_size": 2,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.1,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.2,
+            "runs": [
+                {
+                    "rgcc_size": 2,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.30000000000000004,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.4,
+            "runs": [
+                {
+                    "rgcc_size": 2,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.5,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.6000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.7000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 2,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.8,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 0.9,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        },
+        {
+            "nu": 1.0,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                }
+            ]
+        }
+    ]
+}

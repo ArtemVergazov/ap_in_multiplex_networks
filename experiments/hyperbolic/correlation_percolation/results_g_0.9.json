@@ -1,0 +1,506 @@
+{
+    "N": 50000,
+    "nruns": 10,
+    "nurange": [
+        0.0,
+        1.0,
+        11
+    ],
+    "results": [
+        {
+            "nu": 0.0,
+            "runs": [
+                {
+                    "rgcc_size": 140,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 321,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 127,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 92,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 228,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 204,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 252,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 264,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 135,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.1,
+            "runs": [
+                {
+                    "rgcc_size": 151,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 227,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 166,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 127,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 264,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 62,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 116,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 109,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.2,
+            "runs": [
+                {
+                    "rgcc_size": 218,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 33,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 6,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 13,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 64,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 46,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 4,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 522,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 304,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.30000000000000004,
+            "runs": [
+                {
+                    "rgcc_size": 220,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 152,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 334,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 55,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 90,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 385,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 44,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 111,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 13,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 75,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.4,
+            "runs": [
+                {
+                    "rgcc_size": 90,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 77,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 284,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 926,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 198,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 40,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 258,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 464,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.5,
+            "runs": [
+                {
+                    "rgcc_size": 229,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 106,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 71,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 157,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 130,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 206,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 233,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 69,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 480,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.6000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 326,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 95,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 69,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 305,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 331,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 281,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 300,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.7000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 1,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 51,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 84,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 183,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 214,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 1,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 3,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 183,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 253,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.8,
+            "runs": [
+                {
+                    "rgcc_size": 92,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 70,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 145,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 132,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 112,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 211,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 96,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 127,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 853,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 2,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.9,
+            "runs": [
+                {
+                    "rgcc_size": 330,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 34,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 119,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 312,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 192,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 52,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 124,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 45,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 145,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 151,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 1.0,
+            "runs": [
+                {
+                    "rgcc_size": 147,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 164,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 592,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 133,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 16,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 465,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 446,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 151,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 101,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 799,
+                    "run_id": 9
+                }
+            ]
+        }
+    ]
+}

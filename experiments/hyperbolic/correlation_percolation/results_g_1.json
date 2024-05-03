@@ -1,0 +1,506 @@
+{
+    "N": 50000,
+    "nruns": 10,
+    "nurange": [
+        0.0,
+        1.0,
+        11
+    ],
+    "results": [
+        {
+            "nu": 0.0,
+            "runs": [
+                {
+                    "rgcc_size": 1185,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 3948,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1746,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 1319,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 2914,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 1398,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1540,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 7555,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2473,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 4683,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.1,
+            "runs": [
+                {
+                    "rgcc_size": 224,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 182,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1692,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 8140,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 818,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 963,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1315,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 1467,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2066,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 2582,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.2,
+            "runs": [
+                {
+                    "rgcc_size": 802,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1612,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 898,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 3087,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 1737,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 327,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 955,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 3212,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 4565,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 1204,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.30000000000000004,
+            "runs": [
+                {
+                    "rgcc_size": 3126,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 612,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1961,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 353,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 624,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 1501,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1964,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 5485,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 550,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 70,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.4,
+            "runs": [
+                {
+                    "rgcc_size": 3753,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 176,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1785,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 3230,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 308,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 1167,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1113,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 1018,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2640,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 3693,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.5,
+            "runs": [
+                {
+                    "rgcc_size": 1556,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 2631,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1367,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 811,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 4024,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 1083,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 202,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 595,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 671,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 7295,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.6000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 4882,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1122,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 177,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 1968,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 3390,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 4485,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1171,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 2513,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2586,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 2567,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.7000000000000001,
+            "runs": [
+                {
+                    "rgcc_size": 2275,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 3303,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 3090,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 983,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 3462,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 865,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 1833,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 3565,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 1630,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 3034,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.8,
+            "runs": [
+                {
+                    "rgcc_size": 1002,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1347,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 1913,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 826,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 1835,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 303,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 2985,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 883,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 1675,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 1220,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 0.9,
+            "runs": [
+                {
+                    "rgcc_size": 5959,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 2550,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 3264,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 1683,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 2557,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 2338,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 695,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 252,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2357,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 836,
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "nu": 1.0,
+            "runs": [
+                {
+                    "rgcc_size": 1490,
+                    "run_id": 0
+                },
+                {
+                    "rgcc_size": 1999,
+                    "run_id": 1
+                },
+                {
+                    "rgcc_size": 2724,
+                    "run_id": 2
+                },
+                {
+                    "rgcc_size": 2975,
+                    "run_id": 3
+                },
+                {
+                    "rgcc_size": 2246,
+                    "run_id": 4
+                },
+                {
+                    "rgcc_size": 2590,
+                    "run_id": 5
+                },
+                {
+                    "rgcc_size": 142,
+                    "run_id": 6
+                },
+                {
+                    "rgcc_size": 1598,
+                    "run_id": 7
+                },
+                {
+                    "rgcc_size": 2759,
+                    "run_id": 8
+                },
+                {
+                    "rgcc_size": 1935,
+                    "run_id": 9
+                }
+            ]
+        }
+    ]
+}

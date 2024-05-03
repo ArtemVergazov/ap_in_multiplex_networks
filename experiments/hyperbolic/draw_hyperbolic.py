@@ -121,7 +121,7 @@ def draw_hyperbolic_monoplex(links, r, theta, ax=None):
     fig.tight_layout()
 
 
-def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2):
+def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2, ms=1.5):
     # plt.rc('text', usetex=True)
     # plt.rc('font', size=22, **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
     # plt.rcParams['xtick.major.pad'] = 8
@@ -167,14 +167,14 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2):
 
     ax1.plot(
         np.delete(theta1, rgb_nodes), np.delete(r1, rgb_nodes), 'o',
-        markersize=1.5,
+        markersize=ms,
         alpha=.83,
         label=None,
         color='orange',
     )
     ax2.plot(
         np.delete(theta2, rgb_nodes), np.delete(r2, rgb_nodes), 'o',
-        markersize=1.5,
+        markersize=ms,
         alpha=.83,
         label=None,
         color='orange',
@@ -182,14 +182,14 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2):
 
     ax1.plot(
         theta1[rgb_nodes], r1[rgb_nodes], 'o',
-        markersize=1.5,
+        markersize=ms,
         alpha=.83,
         color='#f78fb3',
         label=None,
     )
     ax2.plot(
         theta2[rgb_nodes], r2[rgb_nodes], 'o',
-        markersize=1.5,
+        markersize=ms,
         alpha=.83,
         label=fr'$\mathrm{{RGCC}}$',
         color='#f78fb3',

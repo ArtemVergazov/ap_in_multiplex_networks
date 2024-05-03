@@ -261,6 +261,69 @@ void runMultiplexAngularCorrelationPercolationHyperbolic(
     );
 }
 
+void runMultiplexRadialCorrelationPercolationHyperbolic(
+    int N, double c, double g,
+    double nuMin, double nuMax, int nuNum,
+    double gamma1, double gamma2,
+    double T1, double T2,
+    int nRuns,
+    std::string outputFileName
+) {
+    json output;
+    output["N"] = N;
+    output["nruns"] = nRuns;
+    output["nurange"] = { nuMin, nuMax, nuNum };
+    json results;
+    unsigned long seed = 1;
+    const double dnu = (nuMax-nuMin) / (nuNum-1);
+
+    for (int i = 0; i < nuNum; ++i) {
+
+        double nu = nuMin + i*dnu;
+        results[i]["nu"] = nu;
+        results[i]["runs"] = {};
+
+#ifdef OUTPUTS
+        std::cout << "\n\nnu = " << nu << std::endl;
+#endif // OUTPUTS
+
+        for (int runId = 0; runId < nRuns; ++runId) {
+
+            results[i]["runs"].push_back({});
+            results[i]["runs"][runId]["run_id"] = runId;
+
+            class MTRand *randNumb1 = new MTRand((unsigned long int)(seed + seed - 1));
+            class MTRand *randNumb2 = new MTRand((unsigned long int)(seed + seed));
+            Graph G1, G2;
+            const auto &kappaTheta = createHyperbolicNetwork(G1, N, c, T1, gamma1, randNumb1);
+            createHyperbolicNetwork(
+                G2, N, c, c, T2,
+                gamma1, gamma2,
+                kappaTheta.first, kappaTheta.second,
+                nu, g,
+                randNumb2
+            );
+            delete randNumb1;
+            delete randNumb2;
+            ++seed;
+
+            int gccSize = 0;
+            while (true) {
+
+                auto artPointsGccSize = removeArticulationPoints(G1, G2);
+                const auto &artPoints = artPointsGccSize.first;
+                gccSize = artPointsGccSize.second;
+                if (!artPoints.size())
+                    break;
+            }
+            results[i]["runs"][runId]["rgcc_size"] = gccSize;
+        }
+        output["results"] = results;
+        std::ofstream o(outputFileName);
+        o << std::setw(4) << output << std::endl;
+    }
+}
+
 void seriesOfMultiplexHyperbolicRuns(
     int N, double nu,
     double cMin, double cMax, int cNum,
