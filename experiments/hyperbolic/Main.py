@@ -59,7 +59,7 @@ def plot_monoplex_with_ap_removal(N, gamma, kbar, T, ax=None, seed=10):
     return draw_hyperbolic_monoplex(links[:], r[:], theta[:], ax=ax)
 
 
-def plot_multiplex_with_ap_removal(N, gamma, kbar, T, nu, g, ax1, ax2, seed=10):
+def plot_multiplex_with_ap_removal(N, gamma, kbar, T, nu, g, ax1, ax2, ms=.2, seed=10):
     np.random.seed(seed)
 
     kmin1 = hyp.CalculateKmin(kbar, gamma)
@@ -88,7 +88,7 @@ def plot_multiplex_with_ap_removal(N, gamma, kbar, T, nu, g, ax1, ax2, seed=10):
     subprocess.call(['hyperb.exe', 'coords2.txt', str(seed + 1), str(N), str(kbar), str(T)])
     links2 = hyp.ReadLinks('links.coords2.txt')
 
-    return draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2)
+    return draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2, ms=ms)
 
 
 if __name__ == '__main__':

@@ -38,7 +38,7 @@ def articulation_points_multiplex(G):
 def max_comp(g):
     comps = list(nx.connected_components(g))
     if len(comps) == 0:
-        return 0
+        return []
     return max(comps, key=len)
 
 
@@ -180,11 +180,12 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2, 
         color='orange',
     )
 
+    BRIGHT_MAGENTA = '#ff08e8'
     ax1.plot(
         theta1[rgb_nodes], r1[rgb_nodes], 'o',
         markersize=ms,
         alpha=.83,
-        color='#f78fb3',
+        color=BRIGHT_MAGENTA,
         label=None,
     )
     ax2.plot(
@@ -192,7 +193,7 @@ def draw_hyperbolic_multiplex(links1, links2, r1, r2, theta1, theta2, ax1, ax2, 
         markersize=ms,
         alpha=.83,
         label=fr'$\mathrm{{RGCC}}$',
-        color='#f78fb3',
+        color=BRIGHT_MAGENTA,
     )
 
     ax1.grid(False)
