@@ -14,9 +14,9 @@ int main(int argc, char **argv) {
 
     constexpr int N = 50000;
 
-    //constexpr double cMin = 7;
-    //constexpr double cMax = 10;
-    //constexpr int cNum = 61;
+    constexpr double cMin = .01;
+    constexpr double cMax = 12;
+    constexpr int cNum = 200;
 
     constexpr int nRuns = 10;
 
@@ -26,10 +26,10 @@ int main(int argc, char **argv) {
     constexpr double T1 = .4;
     constexpr double T2 = .4;
 
-    constexpr double c = 8;
+    //constexpr double c = 8;
 
     constexpr double nu = 1;
-    //constexpr double g = 1;
+    constexpr double g = 1;
 
     //constexpr double angularCorrelationMin = .2;
     //constexpr double angularCorrelationMax = 1;
@@ -39,12 +39,15 @@ int main(int argc, char **argv) {
     //constexpr double nuMax = 1;
     //constexpr int nuNum = 11;
 
-    const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
+    //const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
 
-    const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
+    //const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
+    const std::string project_dir = "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research";
     std::string outputFileName = project_dir +
-        "\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
+        //"\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
         //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0_g_1.json";
+        "\\experiments\\articulation_points_multiplex\\results\\hyperbolic_50000\\results_hyperbolic_50000.json";
+
     //const std::string outputFileNameTemplate = project_dir +
         //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_";
 
@@ -56,25 +59,25 @@ int main(int argc, char **argv) {
     //    gamma1, T1
     //);
 
-    //MultiplexPercolationRunBase *run = new MultiplexPercolationRunHyperbolic(
-    //    N, cMin, cMax, cNum,
-    //    nRuns, outputFileName,
-    //    gamma1, gamma2,
-    //    T1, T2,
-    //    nu, g
-    //);
-
-    //run->run();
-    //delete run;
-
-    runMultiplexAngularCorrelationPercolationHyperbolic(
-        N, c, nu,
-        angularCorrelationVec,
+    MultiplexPercolationRunBase *run = new MultiplexPercolationRunHyperbolic(
+        N, cMin, cMax, cNum,
+        nRuns, outputFileName,
         gamma1, gamma2,
         T1, T2,
-        nRuns,
-        outputFileName
+        nu, g
     );
+
+    run->run();
+    delete run;
+
+    //runMultiplexAngularCorrelationPercolationHyperbolic(
+    //    N, c, nu,
+    //    angularCorrelationVec,
+    //    gamma1, gamma2,
+    //    T1, T2,
+    //    nRuns,
+    //    outputFileName
+    //);
 
     //runMultiplexRadialCorrelationPercolationHyperbolic(
     //    N, c, g,
@@ -101,5 +104,4 @@ int main(int argc, char **argv) {
     std::cout << "Elapsed time: " << elapsed.count() * 1e-9 << " seconds\n";
 
     getchar();
-
 }
