@@ -122,7 +122,6 @@ void MultiplexPercolationRunBase::run() const {
             ++seed;
 
             while (true) {
-
                 int cascadeSize = results[i]["runs"][runId]["cascade"].size();
                 int t = cascadeSize ?
                     1 + static_cast<int>(results[i]["runs"][runId]["cascade"][cascadeSize - 1]["t"]) :
