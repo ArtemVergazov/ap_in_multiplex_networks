@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 50000;
+    constexpr int N = 500;
 
     constexpr double cMin = .01;
     constexpr double cMax = 12;
@@ -28,8 +28,8 @@ int main(int argc, char **argv) {
 
     //constexpr double c = 8;
 
-    //constexpr double nu = 1;
-    //constexpr double g = 1;
+    //constexpr double nu = 0;
+    //constexpr double g = 0;
 
     //constexpr double angularCorrelationMin = .2;
     //constexpr double angularCorrelationMax = 1;
@@ -41,32 +41,29 @@ int main(int argc, char **argv) {
 
     //const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
 
-    const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
-    //const std::string project_dir = "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research";
+    //const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
+    const std::string project_dir = "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research";
     std::string outputFileName = project_dir +
-        //"\\experiments\\hyperbolic\\correlation_percolation\\results_nu_1.json";
-        //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0_g_1.json";
-        //"\\experiments\\articulation_points_multiplex\\results\\hyperbolic_50000\\results_hyperbolic_50000.json";
-        "\\experiments\\articulation_points_monoplex\\results\\hyperbolic_50000\\results_hyperbolic_50000.json";
+        "\\experiments\\articulation_points_monoplex\\results\\hyperbolic_500\\results_hyperbolic_500.json";
 
     //const std::string outputFileNameTemplate = project_dir +
         //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_";
 
     //const std::vector<std::string> angularCorrelationLabels{ "0", "0.2", "0.4", "0.6", "0.8", "1" };
 
-    MonoplexPercolationRunBase *run = new MonoplexPercolationRunHyperbolic(
-        N, cMin, cMax, cNum,
-        nRuns, outputFileName,
-        gamma1, T1
-    );
-
-    //MultiplexPercolationRunBase *run = new MultiplexPercolationRunHyperbolic(
+    //MonoplexPercolationRunBase *run = new MonoplexPercolationRunHyperbolic(
     //    N, cMin, cMax, cNum,
     //    nRuns, outputFileName,
-    //    gamma1, gamma2,
-    //    T1, T2,
-    //    nu, g
+    //    gamma1, T1
     //);
+
+    MultiplexPercolationRunBase *run = new MultiplexPercolationRunHyperbolic(
+        N, cMin, cMax, cNum,
+        nRuns, outputFileName,
+        gamma1, gamma2,
+        T1, T2,
+        nu, g
+    );
 
     run->run();
     delete run;
