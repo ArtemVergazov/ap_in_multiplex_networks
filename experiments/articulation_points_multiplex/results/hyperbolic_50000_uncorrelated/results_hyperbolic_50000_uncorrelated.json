@@ -1,0 +1,1691 @@
+{
+    "N": 50000,
+    "crange": [
+        0.01,
+        12.0,
+        200
+    ],
+    "nruns": 10,
+    "results": [
+        {
+            "c": 0.01,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.07025125628140703,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.1305025125628141,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.19075376884422113,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.25100502512562817,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.3112562814070352,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.37150753768844225,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.4317587939698493,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.4920100502512563,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.5522613065326634,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.6125125628140704,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.6727638190954774,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.7330150753768845,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.7932663316582915,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.8535175879396986,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        },
+        {
+            "c": 0.9137688442211056,
+            "runs": [
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 0
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 1
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 2
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 3
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 4
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 5
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 6
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 1,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 7
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 8
+                },
+                {
+                    "cascade": [
+                        {
+                            "gcc_size": 2,
+                            "n_ap": 0,
+                            "t": 0
+                        }
+                    ],
+                    "run_id": 9
+                }
+            ]
+        }
+    ]
+}

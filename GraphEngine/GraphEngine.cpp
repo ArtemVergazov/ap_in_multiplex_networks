@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
     auto begin = std::chrono::high_resolution_clock::now();
 
-    constexpr int N = 500;
+    constexpr int N = 50000;
 
     constexpr double cMin = .01;
     constexpr double cMax = 12;
@@ -28,8 +28,8 @@ int main(int argc, char **argv) {
 
     //constexpr double c = 8;
 
-    //constexpr double nu = 0;
-    //constexpr double g = 0;
+    constexpr double nu = 0;
+    constexpr double g = 0;
 
     //constexpr double angularCorrelationMin = .2;
     //constexpr double angularCorrelationMax = 1;
@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     //const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
     const std::string project_dir = "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research";
     std::string outputFileName = project_dir +
-        "\\experiments\\articulation_points_monoplex\\results\\hyperbolic_500\\results_hyperbolic_500.json";
+        "\\experiments\\articulation_points_multiplex\\results\\hyperbolic_50000_uncorrelated\\results_hyperbolic_50000_uncorrelated.json";
 
     //const std::string outputFileNameTemplate = project_dir +
         //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_";
