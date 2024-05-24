@@ -35,7 +35,7 @@ def plot_monoplex(N, gamma, kbar, T, ax=None, seed=10):
     return hyp.PlotNetwork(links[:], r[:], theta[:], 'monoplex_plot', ax=ax)
 
 
-def plot_monoplex_with_ap_removal(N, gamma, kbar, T, ax=None, seed=10):
+def plot_monoplex_with_ap_removal(N, gamma, kbar, T, ax=None, ms=.2, seed=10):
     np.random.seed(seed)
 
     kmin = hyp.CalculateKmin(kbar, gamma)
@@ -56,7 +56,7 @@ def plot_monoplex_with_ap_removal(N, gamma, kbar, T, ax=None, seed=10):
 
     subprocess.call(['hyperb.exe', 'coords.txt', str(seed), str(N), str(kbar), str(T)])
     links = hyp.ReadLinks('links.coords.txt')
-    return draw_hyperbolic_monoplex(links[:], r[:], theta[:], ax=ax)
+    return draw_hyperbolic_monoplex(links[:], r[:], theta[:], ax, ms=ms)
 
 
 def plot_multiplex_with_ap_removal(N, gamma, kbar, T, nu, g, ax1, ax2, ms=.2, seed=10):
