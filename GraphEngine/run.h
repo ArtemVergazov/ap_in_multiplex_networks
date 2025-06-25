@@ -34,6 +34,15 @@ private:
 };
 
 class MonoplexPercolationRunER : public MonoplexPercolationRunBase {
+public:
+    MonoplexPercolationRunER(
+        int N,
+        double cMin,
+        double cMax,
+        int cNum,
+        int nRuns,
+        std::string outputFileName
+    ) : MonoplexPercolationRunBase(N, cMin, cMax, cNum, nRuns, outputFileName) {}
 private:
     void createNetwork_(
         Graph &G,
@@ -102,6 +111,15 @@ private:
 };
 
 class MultiplexPercolationRunER : public MultiplexPercolationRunBase {
+public:
+    MultiplexPercolationRunER(
+        int N,
+        double cMin,
+        double cMax,
+        int cNum,
+        int nRuns,
+        std::string outputFileName
+    ) : MultiplexPercolationRunBase(N, cMin, cMax, cNum, nRuns, outputFileName) {}
 private:
     void createNetworks_(
         Graph &G1,

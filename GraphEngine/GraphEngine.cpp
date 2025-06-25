@@ -10,63 +10,60 @@ using json = nlohmann::json;
 
 int main(int argc, char **argv) {
 
-    auto begin = std::chrono::high_resolution_clock::now();
+    auto begin{ std::chrono::high_resolution_clock::now() };
 
-    constexpr int N = 50000;
+    constexpr int N{ 100000 };
 
-    constexpr double cMin = .01;
-    constexpr double cMax = 12;
-    constexpr int cNum = 200;
+    constexpr double cMin{ 3 };
+    constexpr double cMax{ 3.5 };
+    constexpr int cNum{ 100 };
 
-    constexpr int nRuns = 10;
+    constexpr int nRuns{ 10 };
 
-    constexpr double gamma1 = 3;
-    constexpr double gamma2 = 3;
+    // constexpr double gamma1{ 3 };
+    // constexpr double gamma2{ 3 };
 
-    constexpr double T1 = .4;
-    constexpr double T2 = .4;
+    // constexpr double T1{ .4 };
+    // constexpr double T2{ .4 };
 
-    //constexpr double c = 8;
+    //constexpr double c{ 8 };
 
-    constexpr double nu = 0;
-    constexpr double g = 0;
+    // constexpr double nu{ 0 };
+    // constexpr double g{ 0 };
 
-    //constexpr double angularCorrelationMin = .2;
-    //constexpr double angularCorrelationMax = 1;
-    //constexpr int angularCorrelationNum = 5;
+    //constexpr double angularCorrelationMin{ .2 };
+    //constexpr double angularCorrelationMax{ 1 };
+    //constexpr int angularCorrelationNum{ 5 };
 
-    //constexpr double nuMin = 0;
-    //constexpr double nuMax = 1;
-    //constexpr int nuNum = 11;
+    //constexpr double nuMin{ 0 };
+    //constexpr double nuMax{ 1 };
+    //constexpr int nuNum{ 11 };
 
     //const std::vector<double> angularCorrelationVec{ 0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .925, .95, .975, 1 };
 
-    //const std::string project_dir = "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\";
-    const std::string project_dir = "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research";
-    std::string outputFileName = project_dir +
-        "\\experiments\\articulation_points_multiplex\\results\\hyperbolic_50000_uncorrelated\\results_hyperbolic_50000_uncorrelated.json";
+    //const std::string project_dir{ "C:\\Users\\kuzne\\Documents\\ACTIVE_PROJECTS\\research\\" };
+    const std::string project_dir{ "C:\\Users\\kuzne\\OneDrive\\Desktop\\projects\\research" };
+    std::string outputFileName{ project_dir +
+        "\\experiments\\articulation_points_multiplex\\results\\ER_scaling\\results_ER_scaling.json" };
 
-    //const std::string outputFileNameTemplate = project_dir +
-        //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_";
+    //const std::string outputFileNameTemplate{ project_dir +
+        //"\\experiments\\articulation_points_multiplex\\results\\different_correlations\\results_nu_0.8_g_" };
 
     //const std::vector<std::string> angularCorrelationLabels{ "0", "0.2", "0.4", "0.6", "0.8", "1" };
 
-    //MonoplexPercolationRunBase *run = new MonoplexPercolationRunHyperbolic(
-    //    N, cMin, cMax, cNum,
-    //    nRuns, outputFileName,
-    //    gamma1, T1
-    //);
+    //MonoplexPercolationRunBase *run{ new MonoplexPercolationRunER(
+    //   N, cMin, cMax, cNum,
+    //   nRuns, outputFileName
+    //) };
 
-    MultiplexPercolationRunBase *run = new MultiplexPercolationRunHyperbolic(
-        N, cMin, cMax, cNum,
-        nRuns, outputFileName,
-        gamma1, gamma2,
-        T1, T2,
-        nu, g
-    );
+     MultiplexPercolationRunBase *run{ new MultiplexPercolationRunER(
+         N, cMin, cMax, cNum,
+         nRuns, outputFileName
+     ) };
 
     run->run();
     delete run;
+    run = nullptr;
 
     //runMultiplexAngularCorrelationPercolationHyperbolic(
     //    N, c, nu,
@@ -97,8 +94,8 @@ int main(int argc, char **argv) {
     //    angularCorrelationLabels
     //);
 
-    auto end = std::chrono::high_resolution_clock::now();
-    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
+    auto end{ std::chrono::high_resolution_clock::now() };
+    auto elapsed{ std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin) };
     std::cout << "Elapsed time: " << elapsed.count() * 1e-9 << " seconds\n";
 
     getchar();
